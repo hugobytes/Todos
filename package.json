@@ -5,25 +5,85 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios-se": "npx react-native run-ios --simulator='iPhone SE'",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "test": "jest --coverage",
+    "lint": "eslint .",
+    "test:watch": "jest --watch",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
+    "clean": "npx react-native clean-project-auto && yarn && cd ios && pod install && cd .."
   },
   "dependencies": {
-    "react": "16.9.0",
-    "react-native": "0.61.5"
+    "@react-navigation/core": "^5.0.0-alpha.42",
+    "@react-navigation/native": "^5.0.0-alpha.34",
+    "@react-navigation/native-stack": "^5.0.0-alpha.34",
+    "date-fns": "^2.8.1",
+    "immutability-helper": "^3.0.1",
+    "lodash": "^4.17.15",
+    "react": "16.12.0",
+    "react-native": "0.61.5",
+    "react-native-safe-area-context": "^0.7.0",
+    "react-native-safe-area-view": "^1.0.0",
+    "react-native-screens": "^2.0.0-beta.2",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/runtime": "^7.8.4",
-    "@react-native-community/eslint-config": "^0.0.7",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-transform-react-constant-elements": "^7.7.4",
+    "@babel/runtime": "^7.7.7",
+    "@testing-library/jest-native": "^3.1.0",
+    "@testing-library/react-native": "^5.0.3",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
-    "eslint": "^6.8.0",
+    "babel-plugin-graphql-tag": "^2.5.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-better-styled-components": "^1.1.2",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-jest-formatting": "^1.2.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-react-native": "^3.8.1",
+    "husky": "^4.2.1",
     "jest": "^25.1.0",
+    "jest-emotion": "^10.0.26",
+    "jest-runner-eslint": "^0.7.5",
+    "jest-runner-stylelint": "^2.2.4",
+    "jest-styled-components": "^7.0.0-beta.2",
+    "jest-watch-select-projects": "^2.0.0",
+    "lint-staged": "^10.0.7",
     "metro-react-native-babel-preset": "^0.58.0",
-    "react-test-renderer": "16.9.0"
+    "prettier": "^1.19.1",
+    "react-native-clean-project": "^3.3.0",
+    "react-native-dotenv": "^0.2.0",
+    "react-test-renderer": "16.12.0",
+    "stylelint": "^13.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^4.0.0",
+    "stylelint-processor-styled-components": "^1.9.0",
+    "stylelint-react-native": "^2.1.1"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "jest-runner-eslint": {
+    "cliOptions": {
+      "ignorePath": "./.gitignore",
+      "fix": true
+    }
+  },
+  "jest-runner-stylelint": {
+    "cliOptions": {
+      "ignorePath": "./.gitignore",
+      "fix": true
+    }
   }
 }
