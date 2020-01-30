@@ -1,2 +1,0 @@
-# tictask
-simple offline checklist
