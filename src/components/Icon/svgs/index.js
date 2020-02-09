@@ -1,5 +1,7 @@
-import instagram from './instagram'
+import menu from './menu'
+import tick from './tick'
 
 export const icons = {
-  instagram,
+  menu,
+  tick,
 }

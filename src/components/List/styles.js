@@ -1,13 +1,13 @@
 import styled from 'styled-components/native'
-import SafeAreaView from 'react-native-safe-area-view'
 
-const RootView = styled(SafeAreaView)`
+const RootView = styled.ScrollView`
   flex: 1;
 `
 
 const Title = styled.Text`
-  color: #000;
-  font-size: 13px;
+  font-family: 'RobotoMono-Medium';
+  font-size: 24px;
+  padding: 8px;
 `
 
 export { RootView, Title }

@@ -1,4 +1,5 @@
 import styled from 'styled-components/native'
+import { colors } from 'theme'
 
 const Summary = styled.TouchableOpacity`
   align-items: center;
@@ -15,13 +16,13 @@ const NameAndInfo = styled.View`
 `
 
 const Name = styled.Text`
-  color: #000;
+  color: ${colors.text};
   font-family: 'RobotoMono-Medium';
   font-size: 18px;
 `
 
 const Info = styled.Text`
-  color: #000;
+  color: ${colors.text};
   font-family: 'RobotoMono-Regular';
   font-size: 12px;
 `

@@ -1,8 +1,8 @@
 import styled from 'styled-components/native'
 
 const Squircle = styled.View`
-  background: #fbecee;
-  border-radius: 12px;
+  background: #e6e9ef;
+  border-radius: 24px;
   height: 48px;
   width: 48px;
 `

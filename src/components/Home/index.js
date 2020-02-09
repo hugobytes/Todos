@@ -3,7 +3,7 @@ import { map } from 'lodash/fp'
 
 import Summary from 'components/Summary'
 
-import { RootView, Title } from './styles'
+import { RootView } from './styles'
 
 const items = [
   {
@@ -17,6 +17,12 @@ const items = [
     name: 'Shopping',
     tasks: 3,
     completed: 2,
+  },
+  {
+    id: '879dhuii',
+    name: 'Buy food',
+    tasks: 3,
+    completed: 0,
   },
 ]
 
