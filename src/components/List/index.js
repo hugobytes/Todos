@@ -14,7 +14,9 @@ function List({ route, tasksById, listsById }) {
   return (
     <RootView>
       <Title>{route.params.name}</Title>
-      {map(({ id, ...task }) => <Task key={id} {...task} parentList={list} />)(tasks)}
+      {map(({ id, ...task }) => <Task key={id} id={id} {...task} parentList={list} />)(
+        tasks,
+      )}
     </RootView>
   )
 }

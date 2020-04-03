@@ -2,18 +2,23 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Icon from 'components/Icon'
+import { toggleCompleted } from 'actions'
 
 import { Task, Name, Checkbox } from './styles'
 
-function TaskComponent({ id, text, completed, parentList }) {
+function TaskComponent({ id, text, completed, parentList, toggleCompleted }) {
   const { color } = parentList
 
+  const tapCheckbox = () => toggleCompleted(id)
+
   return (
-    <Task activeOpacity={0.75} onPress={() => {}}>
+    <Task>
       <Checkbox
+        activeOpacity={0.75}
         completed={completed}
         hitSlop={{ left: 16, top: 16, right: 16, bottom: 16 }}
         color={color}
+        onPress={tapCheckbox}
       >
         <Icon
           activeOpacity={0.75}
@@ -30,6 +35,8 @@ function TaskComponent({ id, text, completed, parentList }) {
 }
 
 const mapStateToProps = ({ listsById }) => ({ listsById })
-const mapDispatchToProps = () => ({})
+const mapDispatchToProps = dispatch => ({
+  toggleCompleted: id => dispatch(toggleCompleted(id)),
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskComponent)

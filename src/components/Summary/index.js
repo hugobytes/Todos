@@ -27,9 +27,7 @@ function SummaryComponent({ id, name, color, tasksById }) {
   const percentage = calcPercentage(size(completed), size(listTasks))
   const info = getInfo({ percentage, tasks: size(listTasks) })
 
-  function openList() {
-    navigate('list', { id, name })
-  }
+  const openList = () => navigate('list', { id, name })
 
   return (
     <Summary activeOpacity={0.75} onPress={openList}>

@@ -26,15 +26,15 @@ function listsById(state = initialState, action) {
       })
     case TOGGLE_COMPLETED:
       return update(state, {
-        [action.payload.taskId]: {
-          completed: { $set: !state[action.payload.taskId].completed },
+        [action.payload.id]: {
+          completed: { $set: !state[action.payload.id].completed },
         },
       })
     case REMOVE_TASK:
       return update(state, {
         $apply: function(obj) {
           var copy = Object.assign({}, obj)
-          delete copy[action.payload.taskId]
+          delete copy[action.payload.id]
           return copy
         },
       })

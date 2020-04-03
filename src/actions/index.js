@@ -22,21 +22,21 @@ function createNewList(name, color) {
   }
 }
 
-function modifyList(listId) {
+function modifyList(id) {
   return {
     type: MODIFY_LIST,
     payload: {
-      listId,
+      id,
       timestamp: Date.now(),
     },
   }
 }
 
-function deleteList(listId) {
+function deleteList(id) {
   return {
     type: DELETE_LIST,
     payload: {
-      listId,
+      id,
     },
   }
 }
@@ -53,20 +53,20 @@ function addTask(text, listId) {
   }
 }
 
-function toggleCompleted(taskId) {
+function toggleCompleted(id) {
   return {
     type: TOGGLE_COMPLETED,
     payload: {
-      taskId,
+      id,
     },
   }
 }
 
-function removeTask(taskId) {
+function removeTask(id) {
   return {
     type: REMOVE_TASK,
     payload: {
-      taskId,
+      id,
     },
   }
 }
