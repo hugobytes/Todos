@@ -7,11 +7,13 @@ module.exports = function(api) {
       'module-resolver',
       {
         alias: {
+          actions: './src/actions',
           assets: './src/assets',
           components: './src/components',
           routes: './src/routes',
           theme: './src/theme',
           utils: './src/utils',
+          reducers: './src/reducers',
         },
       },
     ],

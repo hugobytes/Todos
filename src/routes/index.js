@@ -38,13 +38,13 @@ export default () => {
           <Stack.Screen name="tictask" component={Home} />
           <Stack.Screen name="archives" component={Archives} />
           <Stack.Screen
-            mode="modal"
             name="list"
             component={List}
             options={{
               headerTitle: '',
               headerBackTitle: 'tictask',
               headerRight: () => <EditList />,
+              stackPresentation: 'modal',
             }}
           />
         </Stack.Navigator>

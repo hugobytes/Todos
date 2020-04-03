@@ -4,10 +4,10 @@ const RootView = styled.ScrollView`
   flex: 1;
 `
 
-const Title = styled.Text`
+const Title = styled.TextInput`
   font-family: 'RobotoMono-Medium';
-  font-size: 24px;
-  padding: 8px;
+  font-size: 20px;
+  padding: 16px;
 `
 
 export { RootView, Title }

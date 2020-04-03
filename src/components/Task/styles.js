@@ -10,7 +10,7 @@ const Task = styled.TouchableOpacity`
   padding: 16px;
 `
 
-const Name = styled.Text`
+const Name = styled.TextInput`
   color: ${colors.text};
   font-family: 'RobotoMono-Medium';
   font-size: 14px;
