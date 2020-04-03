@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { connect } from 'react-redux'
 import { map, filter, eq } from 'lodash/fp'
 
@@ -6,10 +6,11 @@ import { editListName } from 'actions'
 import Task from 'components/Task'
 import ColorPicker from 'components/ColorPicker'
 
-import { RootView, Title } from './styles'
+import { RootView, contentStyle, SpaceTaker, Title } from './styles'
 
 function List({ route, tasksById, listsById, editListName }) {
   const { id } = route.params
+  const [titleFocused, setTitleFocused] = useState(false)
   const tasks = filter(({ listId }) => eq(id)(listId))(tasksById)
   const list = listsById[id]
   const titleInput = useRef(null)
@@ -22,19 +23,31 @@ function List({ route, tasksById, listsById, editListName }) {
     editListName(id, text)
   }
 
+  function handleFocus() {
+    setTitleFocused(true)
+  }
+
+  function handleBlur() {
+    setTitleFocused(false)
+  }
+
   return (
-    <RootView>
+    <RootView keyboardShouldPersistTaps="always" contentContainerStyle={contentStyle}>
       <Title
+        returnKeyType="done"
         ref={titleInput}
         onChangeText={handleChangeText}
         placeholder="Name your list"
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       >
         {list.name}
       </Title>
       {map(({ id, ...task }) => <Task key={id} id={id} {...task} parentList={list} />)(
         tasks,
       )}
-      <ColorPicker id={id} />
+      <SpaceTaker />
+      {titleFocused && <ColorPicker id={id} />}
     </RootView>
   )
 }

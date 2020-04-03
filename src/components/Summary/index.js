@@ -17,6 +17,10 @@ const getInfo = ({ percentage, tasks }) => {
     return 'Not started yet'
   }
 
+  if (percentage === 100) {
+    return 'Completed \ud83c\udf89'
+  }
+
   return `${percentage}% Completed`
 }
 

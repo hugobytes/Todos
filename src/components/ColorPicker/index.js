@@ -4,9 +4,17 @@ import { connect } from 'react-redux'
 
 import { changeListColor } from 'actions'
 
-import { Wheel, wheelContentStyle, ColorDot, SelectedCircle } from './styles'
+import { RootView, Wheel, wheelContentStyle, ColorDot, SelectedCircle } from './styles'
 
-const colors = ['#AB05F2', '#7D07F2', '#5207F2', '#23D9B7', '#D7F205']
+const colors = [
+  '#ec0c9e',
+  '#ab05f2',
+  '#7d07f2',
+  '#5207f2',
+  '#23d9b7',
+  '#8ff76c',
+  '#4c4c4c',
+]
 
 const mapDispatchToProps = dispatch => ({
   changeListColor: (id, name) => dispatch(changeListColor(id, name)),
@@ -32,11 +40,14 @@ const Color = connect(
 })
 
 export default ({ id }) => (
-  <Wheel
-    horizontal={true}
-    showsHorizontalScrollIndicator={false}
-    contentContainerStyle={wheelContentStyle}
-  >
-    {map(color => <Color key={color} color={color} id={id} />)(colors)}
-  </Wheel>
+  <RootView behavior="position" keyboardVerticalOffset={40}>
+    <Wheel
+      keyboardShouldPersistTaps="always"
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={wheelContentStyle}
+    >
+      {map(color => <Color key={color} color={color} id={id} />)(colors)}
+    </Wheel>
+  </RootView>
 )

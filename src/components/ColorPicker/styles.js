@@ -1,5 +1,7 @@
 import styled from 'styled-components/native'
 
+const RootView = styled.KeyboardAvoidingView``
+
 const Wheel = styled.ScrollView`
   background: white;
   flex-direction: row;
@@ -12,18 +14,18 @@ const wheelContentStyle = {
 const ColorDot = styled.TouchableOpacity`
   align-items: center;
   background: ${({ color }) => color};
-  border-radius: 18px;
-  height: 36px;
+  border-radius: 20px;
+  height: 40px;
   justify-content: center;
   margin: 0 8px;
-  width: 36px;
+  width: 40px;
 `
 
 const SelectedCircle = styled.View`
   background: #fff;
-  border-radius: 4px;
-  height: 8px;
-  width: 8px;
+  border-radius: 6px;
+  height: 12px;
+  width: 12px;
 `
 
-export { Wheel, wheelContentStyle, ColorDot, SelectedCircle }
+export { RootView, Wheel, wheelContentStyle, ColorDot, SelectedCircle }

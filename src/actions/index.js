@@ -17,7 +17,7 @@ function createNewList(id) {
     payload: {
       id,
       name: '',
-      color: 'blue',
+      color: '#ec0c9e',
       created: now,
       last_modified: now,
     },
