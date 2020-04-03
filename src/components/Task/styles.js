@@ -12,6 +12,7 @@ const Task = styled.View`
 
 const Name = styled.TextInput`
   color: ${colors.text};
+  flex: 1;
   font-family: 'RobotoMono-Medium';
   font-size: 14px;
 `

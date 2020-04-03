@@ -7,7 +7,7 @@ import Icon from 'components/Icon'
 import { navigate } from 'routes/actions'
 import { createNewList } from 'actions'
 
-import { RootView, Content, NewListButton, NewListText } from './styles'
+import { RootView, Content, contentStyle, NewListButton, NewListText } from './styles'
 
 function Home({ listsById, createNewList }) {
   function handleNewList() {
@@ -18,7 +18,7 @@ function Home({ listsById, createNewList }) {
 
   return (
     <RootView>
-      <Content>
+      <Content contentContainerStyle={contentStyle} showsVerticalScrollIndicator={false}>
         {map(summary => <Summary key={summary.id} {...summary} />)(listsById)}
       </Content>
       <NewListButton activeOpacity={0.75} onPress={handleNewList}>

@@ -29,7 +29,9 @@ function TaskComponent({ id, text, completed, parentList, toggleCompleted }) {
           viewBox="0 0 24 24"
         />
       </Checkbox>
-      <Name>{text}</Name>
+      <Name multiline={true} textAlignVertical="top">
+        {text}
+      </Name>
     </Task>
   )
 }

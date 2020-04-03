@@ -14,6 +14,13 @@ const initialState = {
     text: 'bananas',
     completed: false,
   },
+  'example-third-task': {
+    id: 'example-third-task',
+    listId: 'example-list',
+    text:
+      'apples newest f we’d we feed and then we’d feed them hoes ... ... down at mud muddier Ew',
+    completed: false,
+  },
 }
 
 function listsById(state = initialState, action) {

@@ -2,12 +2,17 @@ import styled from 'styled-components/native'
 
 const RootView = styled.View`
   flex: 1;
-  padding: 16px;
+  padding: 0 16px 16px;
 `
 
 const Content = styled.ScrollView`
   flex: 1;
 `
+
+const contentStyle = {
+  paddingBottom: 16,
+  paddingTop: 16,
+}
 
 const NewListButton = styled.TouchableOpacity`
   align-items: center;
@@ -24,4 +29,4 @@ const NewListText = styled.Text`
   margin-left: 16px;
 `
 
-export { RootView, Content, NewListButton, NewListText }
+export { RootView, Content, contentStyle, NewListButton, NewListText }
