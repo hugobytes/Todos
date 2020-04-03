@@ -6,7 +6,7 @@ import { calcPercentage } from 'utils'
 import { navigate } from 'routes/actions'
 import Pie from 'components/Pie'
 
-import { Summary, NameAndInfo, Name, Info } from './styles'
+import { Summary, NameAndInfo, Name, Untitled, Info } from './styles'
 
 const getInfo = ({ percentage, tasks }) => {
   if (tasks === 0) {
@@ -27,13 +27,13 @@ function SummaryComponent({ id, name, color, tasksById }) {
   const percentage = calcPercentage(size(completed), size(listTasks))
   const info = getInfo({ percentage, tasks: size(listTasks) })
 
-  const openList = () => navigate('list', { id, name })
+  const openList = () => navigate('list', { id })
 
   return (
     <Summary activeOpacity={0.75} onPress={openList}>
       <Pie percentage={percentage} color={color} />
       <NameAndInfo>
-        <Name>{name}</Name>
+        {eq('')(name) ? <Untitled>Untitled</Untitled> : <Name>{name}</Name>}
         <Info>{info}</Info>
       </NameAndInfo>
     </Summary>

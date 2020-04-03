@@ -7,15 +7,15 @@ const ADD_TASK = 'ADD_TASK'
 const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED'
 const REMOVE_TASK = 'REMOVE_TASK'
 
-function createNewList(name, color) {
+function createNewList(id) {
   const now = Date.now()
 
   return {
     type: CREATE_NEW_LIST,
     payload: {
-      id: uniqueId(),
-      name,
-      color,
+      id,
+      name: '',
+      color: 'blue',
       created: now,
       last_modified: now,
     },

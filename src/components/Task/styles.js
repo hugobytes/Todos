@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { colors } from 'theme'
 
-const Task = styled.TouchableOpacity`
+const Task = styled.View`
   align-items: center;
   background: #fff;
   border-bottom-width: 1px;
