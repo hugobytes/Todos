@@ -1,12 +1,18 @@
 import React from 'react'
-import { calcPercentage } from 'utils'
+import { size, filter, eq } from 'lodash/fp'
+import { connect } from 'react-redux'
 
+import { calcPercentage } from 'utils'
 import { navigate } from 'routes/actions'
 import Pie from 'components/Pie'
 
 import { Summary, NameAndInfo, Name, Info } from './styles'
 
-const getInfo = ({ percentage }) => {
+const getInfo = ({ percentage, tasks }) => {
+  if (tasks === 0) {
+    return 'No tasks'
+  }
+
   if (percentage === '0') {
     return 'Not started yet'
   }
@@ -14,13 +20,20 @@ const getInfo = ({ percentage }) => {
   return `${percentage}% Completed`
 }
 
-export default ({ id, name, tasks, completed }) => {
-  const percentage = calcPercentage(completed, tasks)
-  const info = getInfo({ percentage })
+function SummaryComponent({ id, name, color, tasksById }) {
+  const listTasks = filter(({ listId }) => eq(id)(listId))(tasksById)
+  const completed = filter('completed')(listTasks)
+
+  const percentage = calcPercentage(size(completed), size(listTasks))
+  const info = getInfo({ percentage, tasks: size(listTasks) })
+
+  function openList() {
+    navigate('list', { id, name })
+  }
 
   return (
-    <Summary activeOpacity={0.75} onPress={() => navigate('list', { id, name })}>
-      <Pie percentage={percentage} />
+    <Summary activeOpacity={0.75} onPress={openList}>
+      <Pie percentage={percentage} color={color} />
       <NameAndInfo>
         <Name>{name}</Name>
         <Info>{info}</Info>
@@ -28,3 +41,7 @@ export default ({ id, name, tasks, completed }) => {
     </Summary>
   )
 }
+
+const mapStateToProps = ({ tasksById }) => ({ tasksById })
+
+export default connect(mapStateToProps)(SummaryComponent)

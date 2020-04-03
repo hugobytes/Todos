@@ -1,36 +1,24 @@
 import React from 'react'
-import { map } from 'lodash/fp'
+import { connect } from 'react-redux'
+import { map, filter, eq } from 'lodash/fp'
 
 import Task from 'components/Task'
 
 import { RootView, Title } from './styles'
 
-const items = [
-  {
-    id: 'h73bd',
-    name: 'Potatoes, carrots and something long',
-    completed: true,
-  },
-  {
-    id: 'h7iiud',
-    name: 'Leeks',
-    completed: true,
-  },
-  {
-    id: '38jud',
-    name: 'Grapes',
-    completed: false,
-  },
-  {
-    id: 'fwCpg6',
-    name: 'Sausages',
-    completed: false,
-  },
-]
+function List({ route, tasksById, listsById }) {
+  const id = route.params.id
+  const tasks = filter(({ listId }) => eq(id)(listId))(tasksById)
+  const list = listsById[id]
 
-export default ({ route }) => (
-  <RootView>
-    <Title>{route.params.name}</Title>
-    {map(({ id, ...task }) => <Task key={id} {...task} />)(items)}
-  </RootView>
-)
+  return (
+    <RootView>
+      <Title>{route.params.name}</Title>
+      {map(({ id, ...task }) => <Task key={id} {...task} parentList={list} />)(tasks)}
+    </RootView>
+  )
+}
+
+const mapStateToProps = ({ tasksById, listsById }) => ({ tasksById, listsById })
+
+export default connect(mapStateToProps)(List)

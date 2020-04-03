@@ -19,7 +19,7 @@ const Name = styled.TextInput`
 const Checkbox = styled.TouchableOpacity`
   align-content: center;
   align-items: center;
-  background: ${({ completed }) => (completed ? '#4e3ec8' : '#e6e9ef')};
+  background: ${({ completed, color }) => (completed ? color : '#e6e9ef')};
   border-radius: 8px;
   height: 24px;
   justify-content: center;

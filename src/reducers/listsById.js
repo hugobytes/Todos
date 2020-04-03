@@ -1,9 +1,17 @@
 import update from 'immutability-helper'
 import { CREATE_NEW_LIST, MODIFY_LIST, DELETE_LIST } from 'actions'
 
-const initialState = {}
+const initialState = {
+  'example-list': {
+    id: 'example-list',
+    name: 'Groceries from Tesco',
+    color: 'green',
+    created: 123,
+    last_modified: 123,
+  },
+}
 
-function listsById(state = initialState, action) {
+function quickTasksApp(state = initialState, action) {
   switch (action.type) {
     case CREATE_NEW_LIST:
       return update(state, {
@@ -30,4 +38,4 @@ function listsById(state = initialState, action) {
   }
 }
 
-export default listsById
+export default quickTasksApp

@@ -1,7 +1,20 @@
 import update from 'immutability-helper'
-import { ADD_TASK, TOGGLE_COMPLETED, REMOVE_TASK } from 'actions'
+import { ADD_TASK, TOGGLE_COMPLETED, REMOVE_TASK, DELETE_LIST } from 'actions'
 
-const initialState = {}
+const initialState = {
+  'example-first-task': {
+    id: 'example-first-task',
+    listId: 'example-list',
+    text: 'apples',
+    completed: true,
+  },
+  'example-second-task': {
+    id: 'example-second-task',
+    listId: 'example-list',
+    text: 'bananas',
+    completed: false,
+  },
+}
 
 function listsById(state = initialState, action) {
   switch (action.type) {
@@ -25,6 +38,8 @@ function listsById(state = initialState, action) {
           return copy
         },
       })
+    case DELETE_LIST:
+      return state // todo: remove all tasks with listId
     default:
       return state
   }

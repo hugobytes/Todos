@@ -1,5 +1,5 @@
-import { round } from 'lodash/fp'
+import { defaultTo, round } from 'lodash/fp'
 
 export default (amount, total) => {
-  return round((amount / total) * 100)
+  return defaultTo(0)(round((amount / total) * 100))
 }

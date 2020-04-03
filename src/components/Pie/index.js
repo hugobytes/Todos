@@ -1,10 +1,8 @@
 import React from 'react'
 import Pie from 'react-native-pie'
 
-import { Squircle } from './styles'
-
-export default ({ percentage }) => {
-  const sections = percentage > 0 ? [{ percentage, color: '#4e3ec8' }] : []
+export default ({ percentage, color }) => {
+  const sections = percentage > 0 ? [{ percentage, color }] : []
 
   return (
     <Pie
