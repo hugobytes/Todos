@@ -9,7 +9,6 @@ import theme, { colors } from 'theme'
 import Home from 'components/Home'
 import Archives from 'components/Archives'
 import List from 'components/List'
-import EditList from 'components/EditList'
 
 const Stack = createNativeStackNavigator()
 
@@ -43,7 +42,6 @@ export default () => {
             options={{
               headerTitle: '',
               headerBackTitle: 'tictask',
-              headerRight: () => <EditList />,
               stackPresentation: 'modal',
             }}
           />

@@ -1,5 +1,11 @@
 import update from 'immutability-helper'
-import { CREATE_NEW_LIST, MODIFY_LIST, DELETE_LIST } from 'actions'
+import {
+  CREATE_NEW_LIST,
+  EDIT_LIST_NAME,
+  CHANGE_LIST_COLOR,
+  MODIFY_LIST,
+  DELETE_LIST,
+} from 'actions'
 
 const initialState = {
   'example-list': {
@@ -19,9 +25,21 @@ function quickTasksApp(state = initialState, action) {
           $set: { ...action.payload },
         },
       })
+    case EDIT_LIST_NAME:
+      return update(state, {
+        [action.payload.id]: {
+          name: { $set: action.payload.name },
+        },
+      })
+    case CHANGE_LIST_COLOR:
+      return update(state, {
+        [action.payload.id]: {
+          color: { $set: action.payload.color },
+        },
+      })
     case MODIFY_LIST:
       return update(state, {
-        [action.payload.listId]: {
+        [action.payload.id]: {
           last_modified: { $set: action.payload.timestamp },
         },
       })

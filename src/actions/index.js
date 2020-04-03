@@ -1,6 +1,8 @@
 import { uniqueId } from 'lodash/fp'
 
 const CREATE_NEW_LIST = 'CREATE_NEW_LIST'
+const EDIT_LIST_NAME = 'EDIT_LIST_NAME'
+const CHANGE_LIST_COLOR = 'CHANGE_LIST_COLOR'
 const MODIFY_LIST = 'MODIFY_LIST'
 const DELETE_LIST = 'DELETE_LIST'
 const ADD_TASK = 'ADD_TASK'
@@ -28,6 +30,26 @@ function modifyList(id) {
     payload: {
       id,
       timestamp: Date.now(),
+    },
+  }
+}
+
+function editListName(id, name) {
+  return {
+    type: EDIT_LIST_NAME,
+    payload: {
+      id,
+      name,
+    },
+  }
+}
+
+function changeListColor(id, color) {
+  return {
+    type: CHANGE_LIST_COLOR,
+    payload: {
+      id,
+      color,
     },
   }
 }
@@ -74,6 +96,10 @@ function removeTask(id) {
 export {
   CREATE_NEW_LIST,
   createNewList,
+  EDIT_LIST_NAME,
+  editListName,
+  CHANGE_LIST_COLOR,
+  changeListColor,
   MODIFY_LIST,
   modifyList,
   ADD_TASK,
