@@ -17,7 +17,7 @@ const NameAndInfo = styled.View`
 
 const Name = styled.Text`
   color: ${colors.text};
-  font-family: 'RobotoMono-Medium';
+  font-family: 'OpenSans-Bold';
   font-size: 18px;
 `
 

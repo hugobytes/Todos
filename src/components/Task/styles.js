@@ -3,29 +3,35 @@ import { colors } from 'theme'
 
 const Task = styled.View`
   align-items: center;
-  background: #fff;
-  border-bottom-width: 1px;
-  border-color: ${colors.background};
+  background: #e6e8ee;
+  border-radius: 8px;
   flex-direction: row;
-  padding: 16px;
+  margin: 8px 16px;
+  padding: 12px;
+`
+
+const NameWrapper = styled.View`
+  flex: 1;
+  margin-top: -8px;
+  opacity: ${({ completed }) => (completed ? 0.5 : 1)};
 `
 
 const Name = styled.TextInput`
   color: ${colors.text};
-  flex: 1;
   font-family: 'RobotoMono-Medium';
   font-size: 14px;
+  text-decoration: ${({ completed }) => (completed ? 'line-through' : 'none')};
 `
 
 const Checkbox = styled.TouchableOpacity`
   align-content: center;
   align-items: center;
-  background: ${({ completed, color }) => (completed ? color : '#e6e9ef')};
+  background: ${({ completed, color }) => (completed ? color : colors.border)};
   border-radius: 8px;
   height: 24px;
   justify-content: center;
-  margin-right: 16px;
+  margin-right: 12px;
   width: 24px;
 `
 
-export { Task, Name, Checkbox }
+export { Task, NameWrapper, Name, Checkbox }

@@ -1,19 +1,23 @@
 import styled from 'styled-components/native'
 
-const RootView = styled.ScrollView`
+const RootView = styled.View`
   flex: 1;
 `
 
-const contentStyle = { flex: 1 }
-
-const SpaceTaker = styled.View`
+const Content = styled.ScrollView`
   flex: 1;
+`
+
+const contentStyle = { flex: 1, paddingTop: 16 }
+
+const TitleArea = styled.View`
+  background: #fff;
+  padding: 24px;
 `
 
 const Title = styled.TextInput`
-  font-family: 'RobotoMono-Medium';
+  font-family: 'OpenSans-Bold';
   font-size: 20px;
-  padding: 16px;
 `
 
-export { RootView, contentStyle, SpaceTaker, Title }
+export { RootView, Content, contentStyle, TitleArea, Title }

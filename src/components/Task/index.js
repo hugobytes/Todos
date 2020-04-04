@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Icon from 'components/Icon'
 import { toggleCompleted } from 'actions'
 
-import { Task, Name, Checkbox } from './styles'
+import { Task, NameWrapper, Name, Checkbox } from './styles'
 
 function TaskComponent({ id, text, completed, parentList, toggleCompleted }) {
   const { color } = parentList
@@ -29,9 +29,17 @@ function TaskComponent({ id, text, completed, parentList, toggleCompleted }) {
           viewBox="0 0 24 24"
         />
       </Checkbox>
-      <Name multiline={true} textAlignVertical="top">
-        {text}
-      </Name>
+      <NameWrapper completed={completed}>
+        <Name
+          completed={completed}
+          textAlignVertical="top"
+          multiline={true}
+          blurOnSubmit={true}
+          returnKeyType="done"
+        >
+          {text}
+        </Name>
+      </NameWrapper>
     </Task>
   )
 }

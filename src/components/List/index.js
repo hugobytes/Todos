@@ -6,7 +6,7 @@ import { editListName } from 'actions'
 import Task from 'components/Task'
 import ColorPicker from 'components/ColorPicker'
 
-import { RootView, contentStyle, SpaceTaker, Title } from './styles'
+import { RootView, Content, contentStyle, TitleArea, Title } from './styles'
 
 function List({ route, tasksById, listsById, editListName }) {
   const { id } = route.params
@@ -32,21 +32,26 @@ function List({ route, tasksById, listsById, editListName }) {
   }
 
   return (
-    <RootView keyboardShouldPersistTaps="always" contentContainerStyle={contentStyle}>
-      <Title
-        returnKeyType="done"
-        ref={titleInput}
-        onChangeText={handleChangeText}
-        placeholder="Name your list"
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-      >
-        {list.name}
-      </Title>
-      {map(({ id, ...task }) => <Task key={id} id={id} {...task} parentList={list} />)(
-        tasks,
-      )}
-      <SpaceTaker />
+    <RootView>
+      <TitleArea>
+        <Title
+          returnKeyType="done"
+          ref={titleInput}
+          onChangeText={handleChangeText}
+          placeholder="Name your list"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        >
+          {list.name}
+        </Title>
+      </TitleArea>
+
+      <Content keyboardShouldPersistTaps="always" contentContainerStyle={contentStyle}>
+        {map(({ id, ...task }) => <Task key={id} id={id} {...task} parentList={list} />)(
+          tasks,
+        )}
+      </Content>
+
       {titleFocused && <ColorPicker id={id} />}
     </RootView>
   )
