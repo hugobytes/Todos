@@ -1,4 +1,4 @@
-import { uniqueId } from 'lodash/fp'
+import { v4 as uniqueId } from 'uuid'
 
 const CREATE_NEW_LIST = 'CREATE_NEW_LIST'
 const EDIT_LIST_NAME = 'EDIT_LIST_NAME'

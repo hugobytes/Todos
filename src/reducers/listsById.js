@@ -47,7 +47,7 @@ function quickTasksApp(state = initialState, action) {
       return update(state, {
         $apply: function(obj) {
           var copy = Object.assign({}, obj)
-          delete copy[action.payload.listId]
+          delete copy[action.payload.id]
           return copy
         },
       })

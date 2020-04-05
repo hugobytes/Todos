@@ -2,11 +2,21 @@ import React from 'react'
 import { size, filter, eq } from 'lodash/fp'
 import { connect } from 'react-redux'
 
+import { deleteList } from 'actions'
 import { calcPercentage } from 'utils'
 import { navigate } from 'routes/actions'
 import Pie from 'components/Pie'
+import Icon from 'components/Icon'
 
-import { Summary, NameAndInfo, Name, Untitled, Info } from './styles'
+import {
+  RootView,
+  Summary,
+  DeleteButton,
+  NameAndInfo,
+  Name,
+  Untitled,
+  Info,
+} from './styles'
 
 const getInfo = ({ percentage, tasks }) => {
   if (tasks === 0) {
@@ -24,7 +34,7 @@ const getInfo = ({ percentage, tasks }) => {
   return `${percentage}% Completed`
 }
 
-function SummaryComponent({ id, name, color, tasksById }) {
+function SummaryComponent({ id, name, color, tasksById, deleteList }) {
   const listTasks = filter(({ listId }) => eq(id)(listId))(tasksById)
   const completed = filter('completed')(listTasks)
 
@@ -32,18 +42,33 @@ function SummaryComponent({ id, name, color, tasksById }) {
   const info = getInfo({ percentage, tasks: size(listTasks) })
 
   const openList = () => navigate('list', { id })
+  const handleDelete = () => deleteList(id)
 
   return (
-    <Summary activeOpacity={0.75} onPress={openList}>
-      <Pie percentage={percentage} color={color} />
-      <NameAndInfo>
-        {eq('')(name) ? <Untitled>Untitled</Untitled> : <Name>{name}</Name>}
-        <Info>{info}</Info>
-      </NameAndInfo>
-    </Summary>
+    <RootView
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+      snapToInterval={56}
+      bounces={false}
+    >
+      <Summary activeOpacity={0.75} onPress={openList}>
+        <Pie percentage={percentage} color={color} />
+        <NameAndInfo>
+          {eq('')(name) ? <Untitled>Untitled</Untitled> : <Name>{name}</Name>}
+          <Info>{info}</Info>
+        </NameAndInfo>
+      </Summary>
+      <DeleteButton activeOpacity={0.75} onPress={handleDelete}>
+        <Icon name="trash" fill="#fff" viewBox="0 0 32 32" height={24} width={24} />
+      </DeleteButton>
+    </RootView>
   )
 }
 
 const mapStateToProps = ({ tasksById }) => ({ tasksById })
 
-export default connect(mapStateToProps)(SummaryComponent)
+const mapDispatchToProps = dispatch => ({
+  deleteList: id => dispatch(deleteList(id)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SummaryComponent)

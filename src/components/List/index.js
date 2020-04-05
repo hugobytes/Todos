@@ -5,6 +5,7 @@ import { map, filter, eq } from 'lodash/fp'
 import { editListName } from 'actions'
 import Task from 'components/Task'
 import ColorPicker from 'components/ColorPicker'
+import TaskAdder from 'components/TaskAdder'
 
 import { RootView, Content, contentStyle, TitleArea, Title } from './styles'
 
@@ -51,6 +52,7 @@ function List({ route, tasksById, listsById, editListName }) {
           tasks,
         )}
       </Content>
+      <TaskAdder color={list.color} />
 
       {titleFocused && <ColorPicker id={id} />}
     </RootView>

@@ -6,7 +6,7 @@ const Task = styled.View`
   background: #e6e8ee;
   border-radius: 8px;
   flex-direction: row;
-  margin: 8px 16px;
+  margin: 4px 16px;
   padding: 12px;
 `
 

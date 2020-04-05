@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { map, uniqueId } from 'lodash/fp'
+import { map } from 'lodash/fp'
+import { v4 as uniqueId } from 'uuid'
 
 import Summary from 'components/Summary'
 import Icon from 'components/Icon'

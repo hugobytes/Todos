@@ -1,13 +1,30 @@
 import styled from 'styled-components/native'
+import { Dimensions } from 'react-native'
+
 import { colors } from 'theme'
+
+const width = Dimensions.get('window').width
+
+const RootView = styled.ScrollView`
+  border-radius: 8px;
+  flex-direction: row;
+  margin: 8px 0;
+`
+
+const DeleteButton = styled.TouchableOpacity`
+  align-items: center;
+  background: red;
+  justify-content: center;
+  padding: 2px 0 0 4px;
+  width: 56px;
+`
 
 const Summary = styled.TouchableOpacity`
   align-items: center;
   background: #fff;
-  border-radius: 8px;
   flex-direction: row;
-  margin: 8px 0;
   padding: 16px;
+  width: ${width - 32}px;
 `
 
 const NameAndInfo = styled.View`
@@ -31,4 +48,4 @@ const Info = styled.Text`
   font-size: 12px;
 `
 
-export { Summary, NameAndInfo, Name, Untitled, Info }
+export { RootView, Summary, DeleteButton, NameAndInfo, Name, Untitled, Info }
