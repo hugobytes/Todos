@@ -48,7 +48,7 @@ function SummaryComponent({ id, name, color, tasksById, deleteList }) {
     <RootView
       horizontal={true}
       showsHorizontalScrollIndicator={false}
-      snapToInterval={56}
+      snapToInterval={64}
       bounces={false}
     >
       <Summary activeOpacity={0.75} onPress={openList}>

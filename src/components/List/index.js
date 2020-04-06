@@ -53,7 +53,6 @@ function List({ route, tasksById, listsById, editListName }) {
         )}
       </Content>
       <TaskAdder color={list.color} />
-
       {titleFocused && <ColorPicker id={id} />}
     </RootView>
   )

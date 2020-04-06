@@ -13,10 +13,10 @@ const RootView = styled.ScrollView`
 
 const DeleteButton = styled.TouchableOpacity`
   align-items: center;
-  background: red;
+  background: #ec4d4d;
   justify-content: center;
   padding: 2px 0 0 4px;
-  width: 56px;
+  width: 64px;
 `
 
 const Summary = styled.TouchableOpacity`

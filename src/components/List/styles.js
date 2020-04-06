@@ -8,7 +8,7 @@ const Content = styled.ScrollView`
   flex: 1;
 `
 
-const contentStyle = { flex: 1, paddingTop: 16 }
+const contentStyle = { paddingTop: 16 }
 
 const TitleArea = styled.View`
   background: #fff;
