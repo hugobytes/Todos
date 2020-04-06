@@ -9,8 +9,8 @@ import { RootView, DeleteButton, Task, NameWrapper, Name, Checkbox } from './sty
 function TaskComponent({ id, text, completed, parentList, toggleCompleted, removeTask }) {
   const { color } = parentList
 
-  const tapCheckbox = () => toggleCompleted(id)
-  const handleDelete = () => removeTask(id)
+  const tapCheckbox = () => toggleCompleted({ id })
+  const handleDelete = () => removeTask({ id })
 
   return (
     <RootView
@@ -27,22 +27,16 @@ function TaskComponent({ id, text, completed, parentList, toggleCompleted, remov
           color={color}
           onPress={tapCheckbox}
         >
-          <Icon
-            activeOpacity={0.75}
-            name="tick"
-            fill="#fff"
-            height={12}
-            width={12}
-            viewBox="0 0 24 24"
-          />
+          <Icon name="tick" fill="#fff" height={12} width={12} viewBox="0 0 24 24" />
         </Checkbox>
-        <NameWrapper completed={completed}>
+        <NameWrapper completed={completed} activeOpacity={0.75}>
           <Name
             completed={completed}
             textAlignVertical="top"
             multiline={true}
             blurOnSubmit={true}
             returnKeyType="done"
+            editable={false}
           >
             {text}
           </Name>
@@ -57,8 +51,8 @@ function TaskComponent({ id, text, completed, parentList, toggleCompleted, remov
 
 const mapStateToProps = ({ listsById }) => ({ listsById })
 const mapDispatchToProps = dispatch => ({
-  toggleCompleted: id => dispatch(toggleCompleted(id)),
-  removeTask: id => dispatch(removeTask(id)),
+  toggleCompleted: ({ id }) => dispatch(toggleCompleted({ id })),
+  removeTask: ({ id }) => dispatch(removeTask({ id })),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskComponent)

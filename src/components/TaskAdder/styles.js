@@ -1,21 +1,35 @@
 import styled from 'styled-components/native'
 
-const RootView = styled.View``
+import { colors } from 'theme'
 
-const AddTaskButton = styled.TouchableOpacity`
+const RootView = styled.KeyboardAvoidingView``
+
+const NewTask = styled.View`
   align-items: center;
-  background: ${({ color }) => color};
-  border-radius: 4px;
+  background: #e6e8ee;
+  bottom: 0;
   flex-direction: row;
-  margin: 16px;
-  padding: 16px 20px;
+  left: 0;
+  padding: 20px 28px;
+  position: absolute;
+  right: 0;
 `
 
-const AddTaskText = styled.Text`
-  color: #fff;
+const NewTaskInput = styled.TextInput`
+  color: ${colors.text};
   font-family: 'RobotoMono-Medium';
   font-size: 16px;
-  margin-left: 16px;
 `
 
-export { RootView, AddTaskButton, AddTaskText }
+const Checkbox = styled.TouchableOpacity`
+  align-content: center;
+  align-items: center;
+  background: ${({ completed, color }) => (completed ? color : colors.border)};
+  border-radius: 12px;
+  height: 24px;
+  justify-content: center;
+  margin-right: 12px;
+  width: 24px;
+`
+
+export { RootView, NewTask, Checkbox, NewTaskInput }

@@ -42,7 +42,7 @@ function SummaryComponent({ id, name, color, tasksById, deleteList }) {
   const info = getInfo({ percentage, tasks: size(listTasks) })
 
   const openList = () => navigate('list', { id })
-  const handleDelete = () => deleteList(id)
+  const handleDelete = () => deleteList({ id })
 
   return (
     <RootView
@@ -68,7 +68,7 @@ function SummaryComponent({ id, name, color, tasksById, deleteList }) {
 const mapStateToProps = ({ tasksById }) => ({ tasksById })
 
 const mapDispatchToProps = dispatch => ({
-  deleteList: id => dispatch(deleteList(id)),
+  deleteList: ({ id }) => dispatch(deleteList({ id })),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SummaryComponent)

@@ -4,7 +4,9 @@ const RootView = styled.KeyboardAvoidingView``
 
 const Wheel = styled.ScrollView`
   background: white;
+  bottom: 0;
   flex-direction: row;
+  position: absolute;
 `
 
 const wheelContentStyle = {

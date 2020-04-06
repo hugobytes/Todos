@@ -20,4 +20,33 @@ const Title = styled.TextInput`
   font-size: 20px;
 `
 
-export { RootView, Content, contentStyle, TitleArea, Title }
+const SpaceTaker = styled.View`
+  flex: 1;
+`
+
+const AddTaskButton = styled.TouchableOpacity`
+  align-items: center;
+  background: ${({ color }) => color};
+  border-radius: 4px;
+  flex-direction: row;
+  margin: 16px;
+  padding: 16px 20px;
+`
+
+const AddTaskText = styled.Text`
+  color: #fff;
+  font-family: 'RobotoMono-Medium';
+  font-size: 16px;
+  margin-left: 16px;
+`
+
+export {
+  RootView,
+  Content,
+  contentStyle,
+  TitleArea,
+  Title,
+  AddTaskButton,
+  SpaceTaker,
+  AddTaskText,
+}

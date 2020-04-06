@@ -13,7 +13,7 @@ import { RootView, Content, contentStyle, NewListButton, NewListText } from './s
 function Home({ listsById, createNewList }) {
   function handleNewList() {
     const id = uniqueId()
-    createNewList(id)
+    createNewList({ id })
     navigate('list', { id })
   }
 
@@ -32,7 +32,7 @@ function Home({ listsById, createNewList }) {
 
 const mapStateToProps = ({ listsById }) => ({ listsById })
 const mapDispatchToProps = dispatch => ({
-  createNewList: id => dispatch(createNewList(id)),
+  createNewList: ({ id }) => dispatch(createNewList({ id })),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

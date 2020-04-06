@@ -17,7 +17,7 @@ const colors = [
 ]
 
 const mapDispatchToProps = dispatch => ({
-  changeListColor: (id, name) => dispatch(changeListColor(id, name)),
+  changeListColor: ({ id, color }) => dispatch(changeListColor({ id, color })),
 })
 
 const mapStateToProps = ({ listsById }) => ({ listsById })
@@ -29,7 +29,7 @@ const Color = connect(
   const selected = eq(color)(listsById[id].color)
 
   function handlePress() {
-    changeListColor(id, color)
+    changeListColor({ id, color })
   }
 
   return (

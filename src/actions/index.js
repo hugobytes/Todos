@@ -9,7 +9,7 @@ const ADD_TASK = 'ADD_TASK'
 const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED'
 const REMOVE_TASK = 'REMOVE_TASK'
 
-function createNewList(id) {
+function createNewList({ id }) {
   const now = Date.now()
 
   return {
@@ -24,7 +24,7 @@ function createNewList(id) {
   }
 }
 
-function modifyList(id) {
+function modifyList({ id }) {
   return {
     type: MODIFY_LIST,
     payload: {
@@ -34,7 +34,7 @@ function modifyList(id) {
   }
 }
 
-function editListName(id, name) {
+function editListName({ id, name }) {
   return {
     type: EDIT_LIST_NAME,
     payload: {
@@ -44,7 +44,7 @@ function editListName(id, name) {
   }
 }
 
-function changeListColor(id, color) {
+function changeListColor({ id, color }) {
   return {
     type: CHANGE_LIST_COLOR,
     payload: {
@@ -54,7 +54,7 @@ function changeListColor(id, color) {
   }
 }
 
-function deleteList(id) {
+function deleteList({ id }) {
   return {
     type: DELETE_LIST,
     payload: {
@@ -63,7 +63,7 @@ function deleteList(id) {
   }
 }
 
-function addTask(text, listId) {
+function addTask({ text, listId }) {
   return {
     type: ADD_TASK,
     payload: {
@@ -75,7 +75,7 @@ function addTask(text, listId) {
   }
 }
 
-function toggleCompleted(id) {
+function toggleCompleted({ id }) {
   return {
     type: TOGGLE_COMPLETED,
     payload: {
@@ -84,7 +84,7 @@ function toggleCompleted(id) {
   }
 }
 
-function removeTask(id) {
+function removeTask({ id }) {
   return {
     type: REMOVE_TASK,
     payload: {

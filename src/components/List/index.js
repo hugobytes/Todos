@@ -6,12 +6,24 @@ import { editListName } from 'actions'
 import Task from 'components/Task'
 import ColorPicker from 'components/ColorPicker'
 import TaskAdder from 'components/TaskAdder'
+import Icon from 'components/Icon'
 
-import { RootView, Content, contentStyle, TitleArea, Title } from './styles'
+import {
+  RootView,
+  Content,
+  contentStyle,
+  TitleArea,
+  Title,
+  AddTaskButton,
+  AddTaskText,
+  SpaceTaker,
+} from './styles'
 
 function List({ route, tasksById, listsById, editListName }) {
-  const { id } = route.params
   const [titleFocused, setTitleFocused] = useState(false)
+  const [addingTask, setAddingTask] = useState(false)
+
+  const { id } = route.params
   const tasks = filter(({ listId }) => eq(id)(listId))(tasksById)
   const list = listsById[id]
   const titleInput = useRef(null)
@@ -21,7 +33,7 @@ function List({ route, tasksById, listsById, editListName }) {
   }, [])
 
   function handleChangeText(text) {
-    editListName(id, text)
+    editListName({ id, name: text })
   }
 
   function handleFocus() {
@@ -30,6 +42,14 @@ function List({ route, tasksById, listsById, editListName }) {
 
   function handleBlur() {
     setTitleFocused(false)
+  }
+
+  function handleAddTask() {
+    setAddingTask(true)
+  }
+
+  function finishedAddingTasks() {
+    setAddingTask(false)
   }
 
   return (
@@ -47,20 +67,32 @@ function List({ route, tasksById, listsById, editListName }) {
         </Title>
       </TitleArea>
 
-      <Content keyboardShouldPersistTaps="always" contentContainerStyle={contentStyle}>
+      <Content
+        keyboardShouldPersistTaps="always"
+        contentContainerStyle={contentStyle}
+        showsVerticalScrollIndicator={false}
+      >
         {map(({ id, ...task }) => <Task key={id} id={id} {...task} parentList={list} />)(
           tasks,
         )}
       </Content>
-      <TaskAdder color={list.color} />
+
+      <AddTaskButton color={list.color} activeOpacity={0.75} onPress={handleAddTask}>
+        <Icon name="plus" fill="#fff" height={16} width={16} viewBox="0 0 24 24" />
+        <AddTaskText>Add a task</AddTaskText>
+      </AddTaskButton>
+
       {titleFocused && <ColorPicker id={id} />}
+      {addingTask && (
+        <TaskAdder listId={id} color={list.color} finished={finishedAddingTasks} />
+      )}
     </RootView>
   )
 }
 
 const mapStateToProps = ({ tasksById, listsById }) => ({ tasksById, listsById })
 const mapDispatchToProps = dispatch => ({
-  editListName: (id, name) => dispatch(editListName(id, name)),
+  editListName: ({ id, name }) => dispatch(editListName({ id, name })),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)
