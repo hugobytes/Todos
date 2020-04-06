@@ -29,13 +29,13 @@ const Task = styled.View`
 
 const NameWrapper = styled.TouchableOpacity`
   flex: 1;
-  opacity: ${({ completed }) => (completed ? 0.5 : 1)};
 `
 
 const Name = styled.Text`
   color: ${colors.text};
   font-family: 'RobotoMono-Medium';
   font-size: 14px;
+  opacity: ${({ completed }) => (completed ? 0.5 : 1)};
   text-decoration: ${({ completed }) => (completed ? 'line-through' : 'none')};
 `
 
