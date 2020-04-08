@@ -1,6 +1,8 @@
 import styled from 'styled-components/native'
+import { colors } from 'theme'
 
 const RootView = styled.View`
+  background: ${colors.content};
   flex: 1;
 `
 
@@ -11,12 +13,11 @@ const Content = styled.ScrollView`
 const contentStyle = { paddingTop: 16 }
 
 const TitleArea = styled.View`
-  background: #fff;
   padding: 24px;
 `
 
 const Title = styled.TextInput`
-  font-family: 'OpenSans-Bold';
+  font-family: 'Merriweather-Black';
   font-size: 20px;
 `
 
@@ -35,7 +36,7 @@ const AddTaskButton = styled.TouchableOpacity`
 
 const AddTaskText = styled.Text`
   color: #fff;
-  font-family: 'RobotoMono-Medium';
+  font-family: 'Merriweather-Black';
   font-size: 16px;
   margin-left: 16px;
 `

@@ -13,7 +13,7 @@ const RootView = styled.ScrollView`
 
 const DeleteButton = styled.TouchableOpacity`
   align-items: center;
-  background: #ec4d4d;
+  background: ${colors.delete};
   justify-content: center;
   padding: 2px 0 0 4px;
   width: 64px;
@@ -21,7 +21,7 @@ const DeleteButton = styled.TouchableOpacity`
 
 const Task = styled.View`
   align-items: center;
-  background: #e6e8ee;
+  background: ${colors.background};
   flex-direction: row;
   padding: 12px;
   width: ${width - 32}px;
@@ -33,7 +33,7 @@ const NameWrapper = styled.TouchableOpacity`
 
 const Name = styled.Text`
   color: ${colors.text};
-  font-family: 'RobotoMono-Medium';
+  font-family: 'Merriweather-Regular';
   font-size: 14px;
   opacity: ${({ completed }) => (completed ? 0.5 : 1)};
   text-decoration: ${({ completed }) => (completed ? 'line-through' : 'none')};
@@ -42,7 +42,7 @@ const Name = styled.Text`
 const Checkbox = styled.TouchableOpacity`
   align-content: center;
   align-items: center;
-  background: ${({ completed, color }) => (completed ? color : colors.border)};
+  background: ${({ completed, color }) => (completed ? color : colors.content_deep)};
   border-radius: 12px;
   height: 24px;
   justify-content: center;

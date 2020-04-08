@@ -16,6 +16,14 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* tictaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* tictaskTests.m */; };
+		518119242444E94500B23932 /* Merriweather-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5181191C2444E94500B23932 /* Merriweather-LightItalic.ttf */; };
+		518119252444E94500B23932 /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5181191D2444E94500B23932 /* Merriweather-Regular.ttf */; };
+		518119262444E94500B23932 /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5181191E2444E94500B23932 /* Merriweather-Bold.ttf */; };
+		518119272444E94500B23932 /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5181191F2444E94500B23932 /* Merriweather-Black.ttf */; };
+		518119282444E94500B23932 /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 518119202444E94500B23932 /* Merriweather-BlackItalic.ttf */; };
+		518119292444E94500B23932 /* Merriweather-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 518119212444E94500B23932 /* Merriweather-Italic.ttf */; };
+		5181192A2444E94500B23932 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 518119222444E94500B23932 /* Merriweather-Light.ttf */; };
+		5181192B2444E94500B23932 /* Merriweather-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 518119232444E94500B23932 /* Merriweather-BoldItalic.ttf */; };
 		51A5A78223EC2D7F00636A32 /* RobotoMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51A5A77823EC2D7E00636A32 /* RobotoMono-Italic.ttf */; };
 		51A5A78323EC2D7F00636A32 /* RobotoMono-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51A5A77923EC2D7E00636A32 /* RobotoMono-MediumItalic.ttf */; };
 		51A5A78423EC2D7F00636A32 /* RobotoMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51A5A77A23EC2D7E00636A32 /* RobotoMono-BoldItalic.ttf */; };
@@ -78,6 +86,14 @@
 		2D02E47B1E0B4A5D006451C7 /* tictask-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tictask-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* tictask-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tictask-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACF84F7697C0C16CE926EEA /* Pods-tictask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictask.release.xcconfig"; path = "Target Support Files/Pods-tictask/Pods-tictask.release.xcconfig"; sourceTree = "<group>"; };
+		5181191C2444E94500B23932 /* Merriweather-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-LightItalic.ttf"; sourceTree = "<group>"; };
+		5181191D2444E94500B23932 /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Regular.ttf"; sourceTree = "<group>"; };
+		5181191E2444E94500B23932 /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
+		5181191F2444E94500B23932 /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
+		518119202444E94500B23932 /* Merriweather-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BlackItalic.ttf"; sourceTree = "<group>"; };
+		518119212444E94500B23932 /* Merriweather-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Italic.ttf"; sourceTree = "<group>"; };
+		518119222444E94500B23932 /* Merriweather-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Light.ttf"; sourceTree = "<group>"; };
+		518119232444E94500B23932 /* Merriweather-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BoldItalic.ttf"; sourceTree = "<group>"; };
 		51A5A77823EC2D7E00636A32 /* RobotoMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Italic.ttf"; sourceTree = "<group>"; };
 		51A5A77923EC2D7E00636A32 /* RobotoMono-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-MediumItalic.ttf"; sourceTree = "<group>"; };
 		51A5A77A23EC2D7E00636A32 /* RobotoMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -192,6 +208,14 @@
 		51A5A77723EC2D5A00636A32 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5181191F2444E94500B23932 /* Merriweather-Black.ttf */,
+				518119202444E94500B23932 /* Merriweather-BlackItalic.ttf */,
+				5181191E2444E94500B23932 /* Merriweather-Bold.ttf */,
+				518119232444E94500B23932 /* Merriweather-BoldItalic.ttf */,
+				518119212444E94500B23932 /* Merriweather-Italic.ttf */,
+				518119222444E94500B23932 /* Merriweather-Light.ttf */,
+				5181191C2444E94500B23932 /* Merriweather-LightItalic.ttf */,
+				5181191D2444E94500B23932 /* Merriweather-Regular.ttf */,
 				51A5A79323EC2D9300636A32 /* OpenSans-Bold.ttf */,
 				51A5A79423EC2D9300636A32 /* OpenSans-BoldItalic.ttf */,
 				51A5A79223EC2D9300636A32 /* OpenSans-ExtraBold.ttf */,
@@ -409,25 +433,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				518119282444E94500B23932 /* Merriweather-BlackItalic.ttf in Resources */,
 				51A5A79A23EC2D9300636A32 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				5181192A2444E94500B23932 /* Merriweather-Light.ttf in Resources */,
+				518119242444E94500B23932 /* Merriweather-LightItalic.ttf in Resources */,
 				51A5A79F23EC2D9300636A32 /* OpenSans-SemiBold.ttf in Resources */,
 				51A5A78323EC2D7F00636A32 /* RobotoMono-MediumItalic.ttf in Resources */,
+				518119272444E94500B23932 /* Merriweather-Black.ttf in Resources */,
 				51A5A79E23EC2D9300636A32 /* OpenSans-BoldItalic.ttf in Resources */,
 				51A5A79723EC2D9300636A32 /* OpenSans-LightItalic.ttf in Resources */,
 				51A5A78623EC2D7F00636A32 /* RobotoMono-LightItalic.ttf in Resources */,
 				51A5A79623EC2D9300636A32 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				51A5A78B23EC2D7F00636A32 /* RobotoMono-Bold.ttf in Resources */,
+				518119252444E94500B23932 /* Merriweather-Regular.ttf in Resources */,
 				51A5A78223EC2D7F00636A32 /* RobotoMono-Italic.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				51A5A79B23EC2D9300636A32 /* OpenSans-Italic.ttf in Resources */,
 				51A5A79C23EC2D9300636A32 /* OpenSans-ExtraBold.ttf in Resources */,
 				51A5A78923EC2D7F00636A32 /* RobotoMono-ThinItalic.ttf in Resources */,
 				51A5A78A23EC2D7F00636A32 /* RobotoMono-Thin.ttf in Resources */,
+				518119262444E94500B23932 /* Merriweather-Bold.ttf in Resources */,
 				51A5A79923EC2D9300636A32 /* OpenSans-Light.ttf in Resources */,
+				5181192B2444E94500B23932 /* Merriweather-BoldItalic.ttf in Resources */,
 				51A5A79823EC2D9300636A32 /* OpenSans-Regular.ttf in Resources */,
 				51A5A78723EC2D7F00636A32 /* RobotoMono-Medium.ttf in Resources */,
 				51A5A78823EC2D7F00636A32 /* RobotoMono-Light.ttf in Resources */,
 				51A5A78423EC2D7F00636A32 /* RobotoMono-BoldItalic.ttf in Resources */,
+				518119292444E94500B23932 /* Merriweather-Italic.ttf in Resources */,
 				51A5A79D23EC2D9300636A32 /* OpenSans-Bold.ttf in Resources */,
 				51A5A78523EC2D7F00636A32 /* RobotoMono-Regular.ttf in Resources */,
 			);

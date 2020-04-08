@@ -27,14 +27,14 @@ export default () => {
               height: 100,
             },
             headerTitleStyle: {
-              fontFamily: 'RobotoMono-Medium',
+              fontFamily: 'Merriweather-Black',
             },
             headerBackTitleStyle: {
-              fontFamily: 'RobotoMono-Medium',
+              fontFamily: 'Merriweather-Black',
             },
           }}
         >
-          <Stack.Screen name="tictask" component={Home} />
+          <Stack.Screen name="Jotter" component={Home} />
           <Stack.Screen name="archives" component={Archives} />
           <Stack.Screen
             name="list"

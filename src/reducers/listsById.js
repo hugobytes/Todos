@@ -17,37 +17,37 @@ const initialState = {
   },
 }
 
-function quickTasksApp(state = initialState, action) {
-  switch (action.type) {
+function quickTasksApp(state = initialState, { type, payload }) {
+  switch (type) {
     case CREATE_NEW_LIST:
       return update(state, {
-        [action.payload.id]: {
-          $set: { ...action.payload },
+        [payload.id]: {
+          $set: { ...payload },
         },
       })
     case EDIT_LIST_NAME:
       return update(state, {
-        [action.payload.id]: {
-          name: { $set: action.payload.name },
+        [payload.id]: {
+          name: { $set: payload.name },
         },
       })
     case CHANGE_LIST_COLOR:
       return update(state, {
-        [action.payload.id]: {
-          color: { $set: action.payload.color },
+        [payload.id]: {
+          color: { $set: payload.color },
         },
       })
     case MODIFY_LIST:
       return update(state, {
-        [action.payload.id]: {
-          last_modified: { $set: action.payload.timestamp },
+        [payload.id]: {
+          last_modified: { $set: payload.timestamp },
         },
       })
     case DELETE_LIST:
       return update(state, {
         $apply: function(obj) {
           var copy = Object.assign({}, obj)
-          delete copy[action.payload.id]
+          delete copy[payload.id]
           return copy
         },
       })

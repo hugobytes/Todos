@@ -13,7 +13,7 @@ const RootView = styled.ScrollView`
 
 const DeleteButton = styled.TouchableOpacity`
   align-items: center;
-  background: #ec4d4d;
+  background: ${colors.delete};
   justify-content: center;
   padding: 2px 0 0 4px;
   width: 64px;
@@ -21,7 +21,7 @@ const DeleteButton = styled.TouchableOpacity`
 
 const Summary = styled.TouchableOpacity`
   align-items: center;
-  background: #fff;
+  background: ${colors.content};
   flex-direction: row;
   padding: 16px;
   width: ${width - 32}px;
@@ -34,7 +34,7 @@ const NameAndInfo = styled.View`
 
 const Name = styled.Text`
   color: ${colors.text};
-  font-family: 'OpenSans-Bold';
+  font-family: 'Merriweather-Black';
   font-size: 18px;
 `
 
@@ -43,8 +43,8 @@ const Untitled = styled(Name)`
 `
 
 const Info = styled.Text`
-  color: ${colors.text};
-  font-family: 'RobotoMono-Regular';
+  color: ${colors.text_detail};
+  font-family: 'Merriweather-Regular';
   font-size: 12px;
 `
 

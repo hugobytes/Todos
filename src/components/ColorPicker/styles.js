@@ -1,12 +1,16 @@
 import styled from 'styled-components/native'
 
+import { colors } from 'theme'
+
 const RootView = styled.KeyboardAvoidingView``
 
 const Wheel = styled.ScrollView`
-  background: white;
+  background: ${colors.background};
   bottom: 0;
   flex-direction: row;
+  left: 0;
   position: absolute;
+  right: 0;
 `
 
 const wheelContentStyle = {
@@ -24,7 +28,7 @@ const ColorDot = styled.TouchableOpacity`
 `
 
 const SelectedCircle = styled.View`
-  background: #fff;
+  background: ${colors.background};
   border-radius: 6px;
   height: 12px;
   width: 12px;

@@ -43,7 +43,7 @@ function TaskComponent({ id, text, completed, parentList, toggleCompleted, remov
         </NameWrapper>
       </Task>
       <DeleteButton activeOpacity={0.75} onPress={handleDelete}>
-        <Icon name="trash" fill="#fff" viewBox="0 0 32 32" height={24} width={24} />
+        <Icon name="trash" fill="#d93025" viewBox="0 0 32 32" height={24} width={24} />
       </DeleteButton>
     </RootView>
   )

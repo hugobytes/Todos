@@ -6,7 +6,7 @@ const RootView = styled.KeyboardAvoidingView``
 
 const NewTask = styled.View`
   align-items: center;
-  background: #e6e8ee;
+  background: ${colors.background};
   bottom: 0;
   flex-direction: row;
   left: 0;
@@ -17,14 +17,15 @@ const NewTask = styled.View`
 
 const NewTaskInput = styled.TextInput`
   color: ${colors.text};
-  font-family: 'RobotoMono-Medium';
+  flex: 1;
+  font-family: 'Merriweather-Regular';
   font-size: 16px;
 `
 
 const Checkbox = styled.TouchableOpacity`
   align-content: center;
   align-items: center;
-  background: ${({ completed, color }) => (completed ? color : colors.border)};
+  background: ${({ completed, color }) => (completed ? color : colors.content_deep)};
   border-radius: 12px;
   height: 24px;
   justify-content: center;

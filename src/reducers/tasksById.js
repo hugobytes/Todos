@@ -1,4 +1,6 @@
 import update from 'immutability-helper'
+import { filter, map, flow, eq } from 'lodash/fp'
+
 import { ADD_TASK, TOGGLE_COMPLETED, REMOVE_TASK, DELETE_LIST } from 'actions'
 
 const initialState = {
@@ -23,30 +25,42 @@ const initialState = {
   },
 }
 
-function listsById(state = initialState, action) {
-  switch (action.type) {
+function listsById(state = initialState, { type, payload }) {
+  switch (type) {
     case ADD_TASK:
       return update(state, {
-        [action.payload.id]: {
-          $set: { ...action.payload },
+        [payload.id]: {
+          $set: { ...payload },
         },
       })
     case TOGGLE_COMPLETED:
       return update(state, {
-        [action.payload.id]: {
-          completed: { $set: !state[action.payload.id].completed },
+        [payload.id]: {
+          completed: { $set: !state[payload.id].completed },
         },
       })
     case REMOVE_TASK:
       return update(state, {
         $apply: function(obj) {
           var copy = Object.assign({}, obj)
-          delete copy[action.payload.id]
+          delete copy[payload.id]
           return copy
         },
       })
-    case DELETE_LIST:
-      return state // todo: remove all tasks with listId
+    case DELETE_LIST: {
+      const relatedTaskIds = flow(
+        filter(({ listId }) => eq(listId)(payload.id)),
+        map('id'),
+      )(state)
+
+      return update(state, {
+        $apply: function(obj) {
+          var copy = Object.assign({}, obj)
+          for (const id of relatedTaskIds) delete copy[id]
+          return copy
+        },
+      })
+    }
     default:
       return state
   }

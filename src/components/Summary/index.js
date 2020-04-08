@@ -18,20 +18,20 @@ import {
   Info,
 } from './styles'
 
-const getInfo = ({ percentage, tasks }) => {
+const getInfo = ({ completed, tasks }) => {
   if (tasks === 0) {
     return 'No tasks'
   }
 
-  if (percentage === '0') {
+  if (completed === 0) {
     return 'Not started yet'
   }
 
-  if (percentage === 100) {
+  if (completed === tasks) {
     return 'Completed \ud83c\udf89'
   }
 
-  return `${percentage}% Completed`
+  return `${completed}/${tasks} completed`
 }
 
 function SummaryComponent({ id, name, color, tasksById, deleteList }) {
@@ -39,7 +39,7 @@ function SummaryComponent({ id, name, color, tasksById, deleteList }) {
   const completed = filter('completed')(listTasks)
 
   const percentage = calcPercentage(size(completed), size(listTasks))
-  const info = getInfo({ percentage, tasks: size(listTasks) })
+  const info = getInfo({ completed: size(completed), tasks: size(listTasks) })
 
   const openList = () => navigate('list', { id })
   const handleDelete = () => deleteList({ id })
@@ -59,7 +59,7 @@ function SummaryComponent({ id, name, color, tasksById, deleteList }) {
         </NameAndInfo>
       </Summary>
       <DeleteButton activeOpacity={0.75} onPress={handleDelete}>
-        <Icon name="trash" fill="#fff" viewBox="0 0 32 32" height={24} width={24} />
+        <Icon name="trash" fill="#d93025" viewBox="0 0 32 32" height={24} width={24} />
       </DeleteButton>
     </RootView>
   )

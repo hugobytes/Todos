@@ -24,7 +24,7 @@ const NewListButton = styled.TouchableOpacity`
 
 const NewListText = styled.Text`
   color: #fff;
-  font-family: 'RobotoMono-Medium';
+  font-family: 'Merriweather-Black';
   font-size: 16px;
   margin-left: 16px;
 `
