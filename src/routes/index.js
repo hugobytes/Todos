@@ -39,11 +39,7 @@ export default () => {
           <Stack.Screen
             name="list"
             component={List}
-            options={{
-              headerTitle: '',
-              headerBackTitle: 'tictask',
-              stackPresentation: 'modal',
-            }}
+            options={{ stackPresentation: 'modal' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

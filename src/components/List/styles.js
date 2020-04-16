@@ -1,7 +1,8 @@
 import styled from 'styled-components/native'
+import SafeAreaView from 'react-native-safe-area-view'
 import { colors } from 'theme'
 
-const RootView = styled.View`
+const RootView = styled(SafeAreaView)`
   background: ${colors.content};
   flex: 1;
 `
@@ -10,19 +11,15 @@ const Content = styled.ScrollView`
   flex: 1;
 `
 
-const contentStyle = { paddingTop: 16 }
+const contentStyle = { paddingTop: 6 }
 
 const TitleArea = styled.View`
-  padding: 24px;
+  padding: 24px 24px 12px;
 `
 
 const Title = styled.TextInput`
   font-family: 'Merriweather-Black';
   font-size: 20px;
-`
-
-const SpaceTaker = styled.View`
-  flex: 1;
 `
 
 const AddTaskButton = styled.TouchableOpacity`
@@ -41,13 +38,4 @@ const AddTaskText = styled.Text`
   margin-left: 16px;
 `
 
-export {
-  RootView,
-  Content,
-  contentStyle,
-  TitleArea,
-  Title,
-  AddTaskButton,
-  SpaceTaker,
-  AddTaskText,
-}
+export { RootView, Content, contentStyle, TitleArea, Title, AddTaskButton, AddTaskText }

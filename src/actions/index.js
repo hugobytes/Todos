@@ -1,5 +1,3 @@
-import { v4 as uniqueId } from 'uuid'
-
 const CREATE_NEW_LIST = 'CREATE_NEW_LIST'
 const EDIT_LIST_NAME = 'EDIT_LIST_NAME'
 const CHANGE_LIST_COLOR = 'CHANGE_LIST_COLOR'
@@ -67,7 +65,7 @@ function addTask({ text, listId }) {
   return {
     type: ADD_TASK,
     payload: {
-      id: uniqueId(),
+      id: Date.now(),
       listId,
       text,
       completed: false,

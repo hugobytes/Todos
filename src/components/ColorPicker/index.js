@@ -1,6 +1,7 @@
 import React from 'react'
 import { map, eq } from 'lodash/fp'
 import { connect } from 'react-redux'
+import { useSafeArea } from 'react-native-safe-area-view'
 
 import { changeListColor } from 'actions'
 
@@ -39,15 +40,20 @@ const Color = connect(
   )
 })
 
-export default ({ id }) => (
-  <RootView behavior="position" keyboardVerticalOffset={40}>
-    <Wheel
-      keyboardShouldPersistTaps="always"
-      horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={wheelContentStyle}
-    >
-      {map(color => <Color key={color} color={color} id={id} />)(colors)}
-    </Wheel>
-  </RootView>
-)
+export default ({ id }) => {
+  const safeAreaOffset = useSafeArea()
+  const keyboardVerticalOffset = safeAreaOffset.top + 10
+
+  return (
+    <RootView behavior="position" keyboardVerticalOffset={keyboardVerticalOffset}>
+      <Wheel
+        keyboardShouldPersistTaps="always"
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={wheelContentStyle}
+      >
+        {map(color => <Color key={color} color={color} id={id} />)(colors)}
+      </Wheel>
+    </RootView>
+  )
+}

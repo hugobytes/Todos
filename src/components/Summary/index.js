@@ -19,16 +19,16 @@ import {
 } from './styles'
 
 const getInfo = ({ completed, tasks }) => {
-  if (tasks === 0) {
-    return 'No tasks'
+  if (eq(0)(tasks)) {
+    return 'Empty'
   }
 
-  if (completed === 0) {
-    return 'Not started yet'
+  if (eq(0)(completed)) {
+    return eq(1)(tasks) ? '1 task' : `${tasks} tasks`
   }
 
-  if (completed === tasks) {
-    return 'Completed \ud83c\udf89'
+  if (eq(tasks)(completed)) {
+    return `Completed \ud83c\udf89`
   }
 
   return `${completed}/${tasks} completed`
@@ -59,7 +59,7 @@ function SummaryComponent({ id, name, color, tasksById, deleteList }) {
         </NameAndInfo>
       </Summary>
       <DeleteButton activeOpacity={0.75} onPress={handleDelete}>
-        <Icon name="trash" fill="#d93025" viewBox="0 0 32 32" height={24} width={24} />
+        <Icon name="trash" fill="#fff7f7" viewBox="0 0 32 32" height={24} width={24} />
       </DeleteButton>
     </RootView>
   )

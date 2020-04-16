@@ -16,7 +16,6 @@ import {
   Title,
   AddTaskButton,
   AddTaskText,
-  SpaceTaker,
 } from './styles'
 
 function List({ route, tasksById, listsById, editListName }) {
@@ -26,14 +25,20 @@ function List({ route, tasksById, listsById, editListName }) {
   const { id } = route.params
   const tasks = filter(({ listId }) => eq(id)(listId))(tasksById)
   const list = listsById[id]
-  const titleInput = useRef(null)
+
+  const [listName, setListName] = useState(list.name)
+  const listNameInput = useRef(null)
 
   useEffect(() => {
-    if (eq('')(list.name)) titleInput.current.focus()
+    if (eq('')(list.name)) listNameInput.current.focus()
   }, [])
 
   function handleChangeText(text) {
-    editListName({ id, name: text })
+    setListName(text)
+  }
+
+  function submitListNameChange() {
+    editListName({ id, name: listName })
   }
 
   function handleFocus() {
@@ -57,14 +62,14 @@ function List({ route, tasksById, listsById, editListName }) {
       <TitleArea>
         <Title
           returnKeyType="done"
-          ref={titleInput}
+          ref={listNameInput}
           onChangeText={handleChangeText}
-          placeholder="Name your list"
+          placeholder="New list"
           onFocus={handleFocus}
           onBlur={handleBlur}
-        >
-          {list.name}
-        </Title>
+          onSubmitEditing={submitListNameChange}
+          value={listName}
+        />
       </TitleArea>
 
       <Content

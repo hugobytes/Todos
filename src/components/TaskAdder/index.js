@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import { Keyboard } from 'react-native'
 import { connect } from 'react-redux'
 import { size } from 'lodash/fp'
+import { useSafeArea } from 'react-native-safe-area-view'
 
 import Icon from 'components/Icon'
 import { addTask } from 'actions'
@@ -14,6 +15,9 @@ function TaskAdder({ addTask, color, finished, listId }) {
 
   const isEmpty = !size(text)
   const handleTextChange = text => setText(text)
+
+  const safeAreaOffset = useSafeArea()
+  const keyboardVerticalOffset = safeAreaOffset.top + 8
 
   function handleAddTask() {
     if (isEmpty) {
@@ -33,7 +37,7 @@ function TaskAdder({ addTask, color, finished, listId }) {
   }, [])
 
   return (
-    <RootView behavior="position" keyboardVerticalOffset={40}>
+    <RootView behavior="position" keyboardVerticalOffset={keyboardVerticalOffset}>
       <NewTask>
         <Checkbox color={color}>
           <Icon name="tick" fill="#fff" height={12} width={12} viewBox="0 0 24 24" />
@@ -41,7 +45,7 @@ function TaskAdder({ addTask, color, finished, listId }) {
         <NewTaskInput
           onBlur={finished}
           ref={newTaskInput}
-          placeholder="What it do babeee"
+          placeholder="Add a task"
           returnKeyType={'next'}
           onChangeText={handleTextChange}
           value={text}

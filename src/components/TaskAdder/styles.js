@@ -10,7 +10,7 @@ const NewTask = styled.View`
   bottom: 0;
   flex-direction: row;
   left: 0;
-  padding: 20px 28px;
+  padding: 20px 28px 32px;
   position: absolute;
   right: 0;
 `

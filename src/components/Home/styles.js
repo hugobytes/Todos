@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
+import SafeAreaView from 'react-native-safe-area-view'
 
-const RootView = styled.View`
+const RootView = styled(SafeAreaView)`
   flex: 1;
   padding: 0 16px 16px;
 `

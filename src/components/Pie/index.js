@@ -11,7 +11,6 @@ export default ({ percentage, color }) => {
       innerRadius={12}
       backgroundColor={colors.content_deep}
       sections={sections}
-      strokeCap={'round'}
     />
   )
 }

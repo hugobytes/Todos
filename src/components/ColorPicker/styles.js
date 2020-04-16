@@ -6,15 +6,11 @@ const RootView = styled.KeyboardAvoidingView``
 
 const Wheel = styled.ScrollView`
   background: ${colors.background};
-  bottom: 0;
-  flex-direction: row;
-  left: 0;
-  position: absolute;
-  right: 0;
 `
 
 const wheelContentStyle = {
   padding: 16,
+  paddingBottom: 26,
 }
 
 const ColorDot = styled.TouchableOpacity`

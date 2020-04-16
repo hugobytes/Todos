@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { map } from 'lodash/fp'
-import { v4 as uniqueId } from 'uuid'
 
 import Summary from 'components/Summary'
 import Icon from 'components/Icon'
@@ -12,7 +11,7 @@ import { RootView, Content, contentStyle, NewListButton, NewListText } from './s
 
 function Home({ listsById, createNewList }) {
   function handleNewList() {
-    const id = uniqueId()
+    const id = Date.now()
     createNewList({ id })
     navigate('list', { id })
   }
