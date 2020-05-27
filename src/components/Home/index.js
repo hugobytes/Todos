@@ -9,17 +9,17 @@ import { createNewList } from 'actions'
 
 import { RootView, Content, contentStyle, NewListButton, NewListText } from './styles'
 
-function Home({ listsById, createNewList }) {
+function Home({ lists, createNewList }) {
   function handleNewList() {
-    const id = Date.now()
-    createNewList({ id })
-    navigate('list', { id })
+    const listId = Date.now()
+    createNewList({ listId })
+    navigate('list', { listId })
   }
 
   return (
     <RootView>
       <Content contentContainerStyle={contentStyle} showsVerticalScrollIndicator={false}>
-        {map(summary => <Summary key={summary.id} {...summary} />)(listsById)}
+        {map(summary => <Summary key={summary.listId} {...summary} />)(lists)}
       </Content>
       <NewListButton activeOpacity={0.75} onPress={handleNewList}>
         <Icon name="plus" fill="#fff" height={16} width={16} viewBox="0 0 24 24" />
@@ -29,9 +29,9 @@ function Home({ listsById, createNewList }) {
   )
 }
 
-const mapStateToProps = ({ listsById }) => ({ listsById })
+const mapStateToProps = ({ lists }) => ({ lists })
 const mapDispatchToProps = dispatch => ({
-  createNewList: ({ id }) => dispatch(createNewList({ id })),
+  createNewList: payload => dispatch(createNewList(payload)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

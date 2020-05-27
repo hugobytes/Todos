@@ -7,56 +7,57 @@ const ADD_TASK = 'ADD_TASK'
 const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED'
 const REMOVE_TASK = 'REMOVE_TASK'
 
-function createNewList({ id }) {
+function createNewList({ listId }) {
   const now = Date.now()
 
   return {
     type: CREATE_NEW_LIST,
     payload: {
-      id,
+      listId,
       name: '',
       color: '#ec0c9e',
       created: now,
       last_modified: now,
+      tasks: {},
     },
   }
 }
 
-function modifyList({ id }) {
+function modifyList({ listId }) {
   return {
     type: MODIFY_LIST,
     payload: {
-      id,
+      listId,
       timestamp: Date.now(),
     },
   }
 }
 
-function editListName({ id, name }) {
+function editListName({ listId, name }) {
   return {
     type: EDIT_LIST_NAME,
     payload: {
-      id,
+      listId,
       name,
     },
   }
 }
 
-function changeListColor({ id, color }) {
+function changeListColor({ listId, color }) {
   return {
     type: CHANGE_LIST_COLOR,
     payload: {
-      id,
+      listId,
       color,
     },
   }
 }
 
-function deleteList({ id }) {
+function deleteList({ listId }) {
   return {
     type: DELETE_LIST,
     payload: {
-      id,
+      listId,
     },
   }
 }
@@ -65,7 +66,7 @@ function addTask({ text, listId }) {
   return {
     type: ADD_TASK,
     payload: {
-      id: Date.now(),
+      taskId: Date.now(),
       listId,
       text,
       completed: false,
@@ -73,20 +74,22 @@ function addTask({ text, listId }) {
   }
 }
 
-function toggleCompleted({ id }) {
+function toggleCompleted({ taskId, listId }) {
   return {
     type: TOGGLE_COMPLETED,
     payload: {
-      id,
+      taskId,
+      listId
     },
   }
 }
 
-function removeTask({ id }) {
+function removeTask({ taskId, listId }) {
   return {
     type: REMOVE_TASK,
     payload: {
-      id,
+      taskId,
+      listId
     },
   }
 }

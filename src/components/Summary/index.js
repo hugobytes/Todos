@@ -34,15 +34,15 @@ const getInfo = ({ completed, tasks }) => {
   return `${completed}/${tasks} completed`
 }
 
-function SummaryComponent({ id, name, color, tasksById, deleteList }) {
-  const listTasks = filter(({ listId }) => eq(id)(listId))(tasksById)
+function SummaryComponent({ listId, name, color, lists, deleteList }) {
+  const listTasks = lists[listId].tasks
   const completed = filter('completed')(listTasks)
 
   const percentage = calcPercentage(size(completed), size(listTasks))
   const info = getInfo({ completed: size(completed), tasks: size(listTasks) })
 
-  const openList = () => navigate('list', { id })
-  const handleDelete = () => deleteList({ id })
+  const openList = () => navigate('list', { listId })
+  const handleDelete = () => deleteList({ listId })
 
   return (
     <RootView
@@ -65,10 +65,10 @@ function SummaryComponent({ id, name, color, tasksById, deleteList }) {
   )
 }
 
-const mapStateToProps = ({ tasksById }) => ({ tasksById })
+const mapStateToProps = ({ lists }) => ({ lists })
 
 const mapDispatchToProps = dispatch => ({
-  deleteList: ({ id }) => dispatch(deleteList({ id })),
+  deleteList: payload => dispatch(deleteList(payload)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SummaryComponent)

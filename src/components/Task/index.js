@@ -6,11 +6,11 @@ import { toggleCompleted, removeTask } from 'actions'
 
 import { RootView, DeleteButton, Task, NameWrapper, Name, Checkbox } from './styles'
 
-function TaskComponent({ id, text, completed, parentList, toggleCompleted, removeTask }) {
-  const { color } = parentList
+function TaskComponent({ taskId, text, completed, parentList, toggleCompleted, removeTask }) {
+  const { color, listId } = parentList
 
-  const tapCheckbox = () => toggleCompleted({ id })
-  const handleDelete = () => removeTask({ id })
+  const tapCheckbox = () => toggleCompleted({ taskId, listId })
+  const handleDelete = () => removeTask({ taskId, listId })
 
   return (
     <RootView
@@ -49,10 +49,9 @@ function TaskComponent({ id, text, completed, parentList, toggleCompleted, remov
   )
 }
 
-const mapStateToProps = ({ listsById }) => ({ listsById })
 const mapDispatchToProps = dispatch => ({
-  toggleCompleted: ({ id }) => dispatch(toggleCompleted({ id })),
-  removeTask: ({ id }) => dispatch(removeTask({ id })),
+  toggleCompleted: payload => dispatch(toggleCompleted(payload)),
+  removeTask: payload => dispatch(removeTask(payload)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TaskComponent)
+export default connect(null, mapDispatchToProps)(TaskComponent)

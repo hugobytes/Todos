@@ -13,24 +13,23 @@ const colors = [
   '#7d07f2',
   '#5207f2',
   '#23d9b7',
-  // '#8ff76c',
   '#4c4c4c',
 ]
 
 const mapDispatchToProps = dispatch => ({
-  changeListColor: ({ id, color }) => dispatch(changeListColor({ id, color })),
+  changeListColor: ({ listId, color }) => dispatch(changeListColor({ listId, color })),
 })
 
-const mapStateToProps = ({ listsById }) => ({ listsById })
+const mapStateToProps = ({ lists }) => ({ lists })
 
 const Color = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(({ color, id, changeListColor, listsById }) => {
-  const selected = eq(color)(listsById[id].color)
+)(({ color, listId, changeListColor, lists }) => {
+  const selected = eq(color)(lists[listId].color)
 
   function handlePress() {
-    changeListColor({ id, color })
+    changeListColor({ listId, color })
   }
 
   return (
@@ -40,7 +39,7 @@ const Color = connect(
   )
 })
 
-export default ({ id }) => {
+export default ({ listId }) => {
   const safeAreaOffset = useSafeArea()
   const keyboardVerticalOffset = safeAreaOffset.top + 10
 
@@ -52,7 +51,7 @@ export default ({ id }) => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={wheelContentStyle}
       >
-        {map(color => <Color key={color} color={color} id={id} />)(colors)}
+        {map(color => <Color key={color} color={color} listId={listId} />)(colors)}
       </Wheel>
     </RootView>
   )

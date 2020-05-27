@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { connect } from 'react-redux'
-import { map, filter, eq } from 'lodash/fp'
+import { map, eq } from 'lodash/fp'
 
 import { editListName } from 'actions'
 import Task from 'components/Task'
@@ -18,13 +18,13 @@ import {
   AddTaskText,
 } from './styles'
 
-function List({ route, tasksById, listsById, editListName }) {
+function List({ route, lists, editListName }) {
   const [titleFocused, setTitleFocused] = useState(false)
   const [addingTask, setAddingTask] = useState(false)
 
-  const { id } = route.params
-  const tasks = filter(({ listId }) => eq(id)(listId))(tasksById)
-  const list = listsById[id]
+  const { listId } = route.params  
+  const list = lists[listId]
+  const tasks = list.tasks
 
   const [listName, setListName] = useState(list.name)
   const listNameInput = useRef(null)
@@ -38,7 +38,7 @@ function List({ route, tasksById, listsById, editListName }) {
   }
 
   function submitListNameChange() {
-    editListName({ id, name: listName })
+    editListName({ listId, name: listName })
   }
 
   function handleFocus() {
@@ -77,7 +77,7 @@ function List({ route, tasksById, listsById, editListName }) {
         contentContainerStyle={contentStyle}
         showsVerticalScrollIndicator={false}
       >
-        {map(({ id, ...task }) => <Task key={id} id={id} {...task} parentList={list} />)(
+        {map(({ taskId, ...task }) => <Task key={taskId} taskId={taskId} {...task} parentList={list} />)(
           tasks,
         )}
       </Content>
@@ -87,17 +87,17 @@ function List({ route, tasksById, listsById, editListName }) {
         <AddTaskText>Add a task</AddTaskText>
       </AddTaskButton>
 
-      {titleFocused && <ColorPicker id={id} />}
+      {titleFocused && <ColorPicker listId={listId} />}
       {addingTask && (
-        <TaskAdder listId={id} color={list.color} finished={finishedAddingTasks} />
+        <TaskAdder listId={listId} color={list.color} finished={finishedAddingTasks} />
       )}
     </RootView>
   )
 }
 
-const mapStateToProps = ({ tasksById, listsById }) => ({ tasksById, listsById })
+const mapStateToProps = ({ lists }) => ({ lists })
 const mapDispatchToProps = dispatch => ({
-  editListName: ({ id, name }) => dispatch(editListName({ id, name })),
+  editListName: payload => dispatch(editListName(payload)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)

@@ -1,10 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
 
-import listsById from './listsById'
-import tasksById from './tasksById'
+import lists from './lists'
 
-const reducer = combineReducers({ listsById, tasksById })
+const reducer = combineReducers({ lists })
 const store = createStore(reducer, applyMiddleware(logger))
 
 export default store
