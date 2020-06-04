@@ -58,7 +58,7 @@ function TaskAdder({ addTask, color, finished, listId }) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addTask: (payload) => dispatch(addTask(payload)),
+  addTask: payload => dispatch(addTask(payload)),
 })
 
 export default connect(null, mapDispatchToProps)(TaskAdder)

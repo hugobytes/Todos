@@ -27,11 +27,11 @@ const Task = styled.View`
   width: ${width - 32}px;
 `
 
-const NameWrapper = styled.TouchableOpacity`
+const NameWrapper = styled.View`
   flex: 1;
 `
 
-const Name = styled.Text`
+const Name = styled.TextInput`
   color: ${colors.text};
   font-family: 'Merriweather-Regular';
   font-size: 14px;

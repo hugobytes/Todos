@@ -1,5 +1,4 @@
 import update from 'immutability-helper'
-import { filter, map, flow, eq } from 'lodash/fp'
 
 import {
   CREATE_NEW_LIST,
@@ -10,6 +9,7 @@ import {
   ADD_TASK,
   TOGGLE_COMPLETED,
   REMOVE_TASK,
+  EDIT_TASK,
 } from 'actions'
 
 const initialState = {
@@ -39,7 +39,7 @@ const initialState = {
           'apples newest f we’d we feed and then we’d feed them hoes ... ... down at mud muddier Ew',
         completed: false,
       },
-    } 
+    },
   },
 }
 
@@ -54,8 +54,8 @@ function lists(state = initialState, { type, payload }) {
               delete copy[payload.taskId]
               return copy
             },
-          }
-        }
+          },
+        },
       })
     case TOGGLE_COMPLETED:
       return update(state, {
@@ -64,8 +64,8 @@ function lists(state = initialState, { type, payload }) {
             [payload.taskId]: {
               completed: { $set: !state[payload.listId].tasks[payload.taskId].completed },
             },
-          }
-        }
+          },
+        },
       })
     case ADD_TASK:
       return update(state, {
@@ -74,8 +74,20 @@ function lists(state = initialState, { type, payload }) {
             [payload.taskId]: {
               $set: { ...payload },
             },
-          }
-        }
+          },
+        },
+      })
+    case EDIT_TASK:
+      return update(state, {
+        [payload.listId]: {
+          tasks: {
+            [payload.taskId]: {
+              text: {
+                $set: payload.text,
+              },
+            },
+          },
+        },
       })
     case CREATE_NEW_LIST:
       return update(state, {

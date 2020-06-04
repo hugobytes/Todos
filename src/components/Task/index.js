@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
 import Icon from 'components/Icon'
-import { toggleCompleted, removeTask } from 'actions'
+import { toggleCompleted, removeTask, editTask } from 'actions'
 
 import { RootView, DeleteButton, Task, NameWrapper, Name, Checkbox } from './styles'
 
-function TaskComponent({ taskId, text, completed, parentList, toggleCompleted, removeTask }) {
+function TaskComponent({
+  taskId,
+  text,
+  completed,
+  parentList,
+  toggleCompleted,
+  removeTask,
+  editTask,
+}) {
   const { color, listId } = parentList
+  const [currentText, setCurrentText] = useState(text)
 
   const tapCheckbox = () => toggleCompleted({ taskId, listId })
   const handleDelete = () => removeTask({ taskId, listId })
+  const handleSubmit = () => editTask({ text: currentText, listId, taskId })
+  const handleChangeText = text => setCurrentText(text)
 
   return (
     <RootView
@@ -29,14 +40,16 @@ function TaskComponent({ taskId, text, completed, parentList, toggleCompleted, r
         >
           <Icon name="tick" fill="#fff" height={12} width={12} viewBox="0 0 24 24" />
         </Checkbox>
-        <NameWrapper completed={completed} activeOpacity={0.75}>
+        <NameWrapper completed={completed}>
           <Name
             completed={completed}
             textAlignVertical="top"
             multiline={true}
             blurOnSubmit={true}
             returnKeyType="done"
-            editable={false}
+            onChangeText={handleChangeText}
+            onEndEditing={handleSubmit}
+            editable={false} // todo: fix annoying Keyboard drag for delete behavior or open in new screen to edit
           >
             {text}
           </Name>
@@ -52,6 +65,7 @@ function TaskComponent({ taskId, text, completed, parentList, toggleCompleted, r
 const mapDispatchToProps = dispatch => ({
   toggleCompleted: payload => dispatch(toggleCompleted(payload)),
   removeTask: payload => dispatch(removeTask(payload)),
+  editTask: payload => dispatch(editTask(payload)),
 })
 
 export default connect(null, mapDispatchToProps)(TaskComponent)

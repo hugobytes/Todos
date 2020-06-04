@@ -34,7 +34,7 @@ export default () => {
             },
           }}
         >
-          <Stack.Screen name="Jotter" component={Home} />
+          <Stack.Screen name="Todos" component={Home} />
           <Stack.Screen name="archives" component={Archives} />
           <Stack.Screen
             name="list"

@@ -6,6 +6,7 @@ const DELETE_LIST = 'DELETE_LIST'
 const ADD_TASK = 'ADD_TASK'
 const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED'
 const REMOVE_TASK = 'REMOVE_TASK'
+const EDIT_TASK = 'EDIT_TASK'
 
 function createNewList({ listId }) {
   const now = Date.now()
@@ -74,12 +75,23 @@ function addTask({ text, listId }) {
   }
 }
 
+function editTask({ text, listId, taskId }) {
+  return {
+    type: EDIT_TASK,
+    payload: {
+      taskId,
+      listId,
+      text,
+    },
+  }
+}
+
 function toggleCompleted({ taskId, listId }) {
   return {
     type: TOGGLE_COMPLETED,
     payload: {
       taskId,
-      listId
+      listId,
     },
   }
 }
@@ -89,7 +101,7 @@ function removeTask({ taskId, listId }) {
     type: REMOVE_TASK,
     payload: {
       taskId,
-      listId
+      listId,
     },
   }
 }
@@ -111,4 +123,6 @@ export {
   toggleCompleted,
   REMOVE_TASK,
   removeTask,
+  EDIT_TASK,
+  editTask,
 }
