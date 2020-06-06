@@ -1,11 +1,11 @@
 {
-  "name": "tictask",
+  "name": "Todos",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "ios-se": "npx react-native run-ios --simulator='iPhone SE'",
+    "ios-se": "npx react-native run-ios --simulator='iPhone SE (2nd generation)'",
     "start": "npx react-native start --reset-cache",
     "test": "jest --coverage",
     "lint": "eslint .",
