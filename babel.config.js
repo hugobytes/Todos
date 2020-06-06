@@ -1,7 +1,7 @@
 module.exports = function(api) {
-  const isProd = api.env('production')
+  const isProd = api.env('production');
 
-  const presets = ['module:metro-react-native-babel-preset']
+  const presets = ['module:metro-react-native-babel-preset'];
   let plugins = [
     [
       'module-resolver',
@@ -21,10 +21,10 @@ module.exports = function(api) {
     'babel-plugin-styled-components',
     'lodash',
     ...(isProd ? ['transform-remove-console'] : []),
-  ]
+  ];
 
   return {
     presets,
     plugins,
-  }
-}
+  };
+};
