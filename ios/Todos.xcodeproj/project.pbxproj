@@ -17,6 +17,15 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TodosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TodosTests.m */; };
 		3BF4C67B0A79B1BA50FB8F34 /* libPods-Todos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CE5E90C515DB4A132E9838 /* libPods-Todos.a */; };
+		51CD9ACB248BD1A000752465 /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9AAE248BD19E00752465 /* Merriweather-Bold.ttf */; };
+		51CD9ACC248BD1A000752465 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9AAF248BD19F00752465 /* Merriweather-Light.ttf */; };
+		51CD9ACE248BD1A000752465 /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9AB1248BD19F00752465 /* Merriweather-Black.ttf */; };
+		51CD9AD5248BD1A000752465 /* Merriweather-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9AB8248BD19F00752465 /* Merriweather-Italic.ttf */; };
+		51CD9AD6248BD1A000752465 /* agreement.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9AB9248BD19F00752465 /* agreement.pdf */; };
+		51CD9AD7248BD1A000752465 /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9ABA248BD19F00752465 /* Merriweather-Regular.ttf */; };
+		51CD9AE0248BD1A000752465 /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9AC3248BD1A000752465 /* Merriweather-BlackItalic.ttf */; };
+		51CD9AE1248BD1A000752465 /* Merriweather-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9AC4248BD1A000752465 /* Merriweather-LightItalic.ttf */; };
+		51CD9AE2248BD1A000752465 /* Merriweather-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD9AC5248BD1A000752465 /* Merriweather-BoldItalic.ttf */; };
 		6704E75EE40376846BE156C6 /* libPods-Todos-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDFD8F30B58D0614DC87F2B /* libPods-Todos-tvOS.a */; };
 		77CE896A8B6D4A9C1C236C3C /* libPods-Todos-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C550AD838D0ADD8EC7A3AC0F /* libPods-Todos-tvOSTests.a */; };
 		A92C3B35263D6A9F4CF08159 /* libPods-Todos-TodosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A5E0CE69EFDBAC724C4A81 /* libPods-Todos-TodosTests.a */; };
@@ -57,6 +66,15 @@
 		2D02E47B1E0B4A5D006451C7 /* Todos-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Todos-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Todos-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Todos-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E551D0704A736B6F6022ADC /* Pods-Todos-TodosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todos-TodosTests.release.xcconfig"; path = "Target Support Files/Pods-Todos-TodosTests/Pods-Todos-TodosTests.release.xcconfig"; sourceTree = "<group>"; };
+		51CD9AAE248BD19E00752465 /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
+		51CD9AAF248BD19F00752465 /* Merriweather-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Light.ttf"; sourceTree = "<group>"; };
+		51CD9AB1248BD19F00752465 /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
+		51CD9AB8248BD19F00752465 /* Merriweather-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Italic.ttf"; sourceTree = "<group>"; };
+		51CD9AB9248BD19F00752465 /* agreement.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = agreement.pdf; sourceTree = "<group>"; };
+		51CD9ABA248BD19F00752465 /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Regular.ttf"; sourceTree = "<group>"; };
+		51CD9AC3248BD1A000752465 /* Merriweather-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BlackItalic.ttf"; sourceTree = "<group>"; };
+		51CD9AC4248BD1A000752465 /* Merriweather-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-LightItalic.ttf"; sourceTree = "<group>"; };
+		51CD9AC5248BD1A000752465 /* Merriweather-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BoldItalic.ttf"; sourceTree = "<group>"; };
 		5B307D1ADA761D4A8372DB03 /* Pods-Todos-TodosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todos-TodosTests.debug.xcconfig"; path = "Target Support Files/Pods-Todos-TodosTests/Pods-Todos-TodosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		824BBD7DD92AEF5825CF0671 /* Pods-Todos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todos.debug.xcconfig"; path = "Target Support Files/Pods-Todos/Pods-Todos.debug.xcconfig"; sourceTree = "<group>"; };
 		A7CE5E90C515DB4A132E9838 /* libPods-Todos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Todos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +167,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		51CD9AAA248BD18700752465 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				51CD9AB9248BD19F00752465 /* agreement.pdf */,
+				51CD9AB1248BD19F00752465 /* Merriweather-Black.ttf */,
+				51CD9AC3248BD1A000752465 /* Merriweather-BlackItalic.ttf */,
+				51CD9AAE248BD19E00752465 /* Merriweather-Bold.ttf */,
+				51CD9AC5248BD1A000752465 /* Merriweather-BoldItalic.ttf */,
+				51CD9AB8248BD19F00752465 /* Merriweather-Italic.ttf */,
+				51CD9AAF248BD19F00752465 /* Merriweather-Light.ttf */,
+				51CD9AC4248BD1A000752465 /* Merriweather-LightItalic.ttf */,
+				51CD9ABA248BD19F00752465 /* Merriweather-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +193,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				51CD9AAA248BD18700752465 /* Resources */,
 				13B07FAE1A68108700A75B9A /* Todos */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* TodosTests */,
@@ -194,7 +229,6 @@
 				CEF10BAA93067612B2AC7AEB /* Pods-Todos-tvOSTests.debug.xcconfig */,
 				20D66D37B56A3E237433BCAF /* Pods-Todos-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -292,6 +326,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = DL9D52SP6F;
 						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -338,8 +373,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51CD9ACB248BD1A000752465 /* Merriweather-Bold.ttf in Resources */,
+				51CD9AE0248BD1A000752465 /* Merriweather-BlackItalic.ttf in Resources */,
+				51CD9ACC248BD1A000752465 /* Merriweather-Light.ttf in Resources */,
+				51CD9AD6248BD1A000752465 /* agreement.pdf in Resources */,
+				51CD9AD5248BD1A000752465 /* Merriweather-Italic.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				51CD9AE2248BD1A000752465 /* Merriweather-BoldItalic.ttf in Resources */,
+				51CD9ACE248BD1A000752465 /* Merriweather-Black.ttf in Resources */,
+				51CD9AE1248BD1A000752465 /* Merriweather-LightItalic.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				51CD9AD7248BD1A000752465 /* Merriweather-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +674,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DL9D52SP6F;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -642,7 +687,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hugobytes.Todos;
 				PRODUCT_NAME = Todos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -657,6 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DL9D52SP6F;
 				INFOPLIST_FILE = Todos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -664,7 +710,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hugobytes.Todos;
 				PRODUCT_NAME = Todos;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
