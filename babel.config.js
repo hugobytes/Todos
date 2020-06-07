@@ -1,4 +1,4 @@
-module.exports = function(api) {
+module.exports = function (api) {
   const isProd = api.env('production');
 
   const presets = ['module:metro-react-native-babel-preset'];
@@ -10,7 +10,9 @@ module.exports = function(api) {
           actions: './src/actions',
           assets: './src/assets',
           components: './src/components',
+          containers: './src/containers',
           routes: './src/routes',
+          screens: './src/screens',
           theme: './src/theme',
           utils: './src/utils',
           reducers: './src/reducers',

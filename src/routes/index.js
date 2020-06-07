@@ -1,19 +1,19 @@
-import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { navigationRef } from './actions'
-import { AppearanceProvider, useColorScheme } from 'react-native-appearance'
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {navigationRef} from './actions';
+import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
 
-import theme, { colors } from 'theme'
+import theme, {colors} from 'theme';
 
-import Home from 'components/Home'
-import Archives from 'components/Archives'
-import List from 'components/List'
+import Home from 'components/Home';
+import Archives from 'components/Archives';
+import List from 'screens/List';
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
 export default () => {
-  const scheme = useColorScheme()
+  const scheme = useColorScheme();
 
   return (
     <AppearanceProvider>
@@ -32,17 +32,16 @@ export default () => {
             headerBackTitleStyle: {
               fontFamily: 'Merriweather-Black',
             },
-          }}
-        >
+          }}>
           <Stack.Screen name="Todos" component={Home} />
           <Stack.Screen name="archives" component={Archives} />
           <Stack.Screen
             name="list"
             component={List}
-            options={{ stackPresentation: 'modal' }}
+            options={{stackPresentation: 'modal'}}
           />
         </Stack.Navigator>
       </NavigationContainer>
     </AppearanceProvider>
-  )
-}
+  );
+};
