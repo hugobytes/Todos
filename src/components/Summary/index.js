@@ -50,7 +50,7 @@ function SummaryComponent({listId, name, color, lists, deleteList}) {
       showsHorizontalScrollIndicator={false}
       snapToInterval={64}
       bounces={false}>
-      <Summary activeOpacity={1} onPress={openList}>
+      <Summary activeOpacity={0.75} onPress={openList}>
         <Pie percentage={percentage} color={color} />
         <NameAndInfo>
           {eq('')(name) ? <Untitled>Untitled</Untitled> : <Name>{name}</Name>}

@@ -30,20 +30,10 @@ const NewListText = styled.Text`
   margin-left: 16px;
 `;
 
-const EmptyImage = styled.Image`
-  flex: 1;
-  resize-mode: contain;
+const Huntress = styled.Image`
+  opacity: 0.08;
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
+  width: 180%;
 `;
 
-export {
-  RootView,
-  Content,
-  contentStyle,
-  NewListButton,
-  NewListText,
-  EmptyImage,
-};
+export {RootView, Content, contentStyle, NewListButton, NewListText, Huntress};

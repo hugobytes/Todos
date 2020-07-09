@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {map, size} from 'lodash/fp';
+import {map} from 'lodash/fp';
 
 import Summary from 'components/Summary';
 import Icon from 'components/Icon';
@@ -13,7 +13,7 @@ import {
   contentStyle,
   NewListButton,
   NewListText,
-  EmptyImage,
+  Huntress,
 } from './styles';
 
 function Home({lists, createNewList}) {
@@ -25,10 +25,7 @@ function Home({lists, createNewList}) {
 
   return (
     <RootView>
-      <EmptyImage source={require('assets/empty.png')} />
-      {!size(lists) ? (
-        <EmptyImage source={require('assets/empty.png')} />
-      ) : null}
+      <Huntress source={require('assets/huntress.png')} />
       <Content
         contentContainerStyle={contentStyle}
         showsVerticalScrollIndicator={false}>
