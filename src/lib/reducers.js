@@ -15,28 +15,27 @@ import {
 const initialState = {
   'example-list': {
     listId: 'example-list',
-    name: 'Groceries from Tesco',
-    color: 'green',
+    name: 'Groceries',
+    color: '#ec0c9e',
     created: 123,
     last_modified: 123,
     tasks: {
       'example-first-task': {
         taskId: 'example-first-task',
         listId: 'example-list',
-        text: 'apples',
+        text: 'Apples',
         completed: true,
       },
       'example-second-task': {
         taskId: 'example-second-task',
         listId: 'example-list',
-        text: 'bananas',
+        text: 'Bananas',
         completed: false,
       },
       'example-third-task': {
         taskId: 'example-third-task',
         listId: 'example-list',
-        text:
-          'apples newest f we’d we feed and then we’d feed them hoes ... ... down at mud muddier Ew',
+        text: 'Clementines',
         completed: false,
       },
     },

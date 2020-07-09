@@ -23,7 +23,7 @@ const Task = styled.View`
   align-items: center;
   background: ${colors.background};
   flex-direction: row;
-  padding: 12px 16px;
+  padding: 12px 64px 12px 16px;
   font-weight: 700;
   width: ${width - 32}px;
 `;
@@ -48,7 +48,7 @@ const Checkbox = styled.TouchableOpacity`
   border-radius: 12px;
   height: 24px;
   justify-content: center;
-  margin-right: 12px;
+  margin-right: 14px;
   width: 24px;
 `;
 

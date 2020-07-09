@@ -45,7 +45,7 @@ const Untitled = styled(Name)`
 const Info = styled.Text`
   color: ${colors.text_detail};
   font-family: 'Merriweather-Regular';
-  font-size: 12px;
+  font-size: 14px;
 `;
 
 export {RootView, Summary, DeleteButton, NameAndInfo, Name, Untitled, Info};
