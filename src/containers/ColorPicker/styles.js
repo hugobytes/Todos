@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 import {colors} from 'theme';
 
-const RootView = styled.KeyboardAvoidingView``;
+const RootView = styled.View``;
 
 const Wheel = styled.ScrollView`
   background: ${colors.background};
