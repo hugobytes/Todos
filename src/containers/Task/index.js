@@ -53,6 +53,7 @@ function TaskComponent({
         </Checkbox>
         <NameWrapper completed={completed}>
           <Name
+            hitSlop={{left: 16, top: 16, right: 16, bottom: 16}}
             completed={completed}
             textAlignVertical="top"
             multiline={true}
@@ -60,7 +61,7 @@ function TaskComponent({
             returnKeyType="done"
             onChangeText={handleChangeText}
             onEndEditing={handleSubmit}
-            editable={false} // todo: fix annoying Keyboard drag for delete behavior or open in new screen to edit
+            editable={true} // todo: fix annoying Keyboard drag for delete behavior or open in new screen to edit
           >
             {text}
           </Name>

@@ -7,7 +7,7 @@ const colors = {
   primary: '#1d1e26',
   text: '#1d1e26',
   text_detail: '#4a4a49',
-  delete: '#d93025',
-}
+  delete: 'gray',
+};
 
-export default colors
+export default colors;

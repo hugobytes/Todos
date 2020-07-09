@@ -6,8 +6,7 @@ import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
 
 import theme, {colors} from 'theme';
 
-import Home from 'components/Home';
-import Archives from 'components/Archives';
+import Home from 'screens/Home';
 import List from 'screens/List';
 
 const Stack = createNativeStackNavigator();
@@ -34,7 +33,6 @@ export default () => {
             },
           }}>
           <Stack.Screen name="Todos" component={Home} />
-          <Stack.Screen name="archives" component={Archives} />
           <Stack.Screen
             name="list"
             component={List}

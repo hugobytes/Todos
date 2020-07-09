@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {map} from 'lodash/fp';
 
-import Summary from 'components/Summary';
+import Summary from 'containers/Summary';
 import Icon from 'components/Icon';
 import {navigate} from 'routes/actions';
 import {createNewList} from 'actions';

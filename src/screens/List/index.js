@@ -30,7 +30,9 @@ function List({route, lists, editListName}) {
   const listNameInput = useRef(null);
 
   useEffect(() => {
-    if (eq('')(list.name)) listNameInput.current.focus();
+    setTimeout(() => {
+      if (eq('')(list.name)) listNameInput.current.focus();
+    }, 50);
   }, [list.name]);
 
   function handleChangeText(text) {
