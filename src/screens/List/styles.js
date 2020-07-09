@@ -7,11 +7,15 @@ const RootView = styled(SafeAreaView)`
   flex: 1;
 `;
 
+const ContentView = styled.KeyboardAvoidingView`
+  flex: 1;
+`;
+
 const Content = styled.ScrollView`
   flex: 1;
 `;
 
-const contentStyle = {paddingTop: 6};
+const contentStyle = {paddingTop: 6, paddingBottom: 90};
 
 const TitleArea = styled.View`
   padding: 24px 24px 12px;
@@ -27,7 +31,7 @@ const AddTaskButton = styled.TouchableOpacity`
   background: ${({color}) => color};
   border-radius: 4px;
   flex-direction: row;
-  margin: 16px;
+  margin: 0 16px 16px;
   padding: 16px 20px;
 `;
 
@@ -40,6 +44,7 @@ const AddTaskText = styled.Text`
 
 export {
   RootView,
+  ContentView,
   Content,
   contentStyle,
   TitleArea,

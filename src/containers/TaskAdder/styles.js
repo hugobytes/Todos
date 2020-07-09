@@ -1,8 +1,8 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
-import { colors } from 'theme'
+import {colors} from 'theme';
 
-const RootView = styled.KeyboardAvoidingView``
+const RootView = styled.View``;
 
 const NewTask = styled.View`
   align-items: center;
@@ -13,24 +13,25 @@ const NewTask = styled.View`
   padding: 20px 28px 32px;
   position: absolute;
   right: 0;
-`
+`;
 
 const NewTaskInput = styled.TextInput`
   color: ${colors.text};
   flex: 1;
   font-family: 'Merriweather-Regular';
   font-size: 16px;
-`
+`;
 
 const Checkbox = styled.TouchableOpacity`
   align-content: center;
   align-items: center;
-  background: ${({ completed, color }) => (completed ? color : colors.content_deep)};
+  background: ${({completed, color}) =>
+    completed ? color : colors.content_deep};
   border-radius: 12px;
   height: 24px;
   justify-content: center;
   margin-right: 12px;
   width: 24px;
-`
+`;
 
-export { RootView, NewTask, Checkbox, NewTaskInput }
+export {RootView, NewTask, Checkbox, NewTaskInput};

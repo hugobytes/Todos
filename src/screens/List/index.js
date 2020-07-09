@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {connect} from 'react-redux';
 import {map, eq} from 'lodash/fp';
+import {useSafeArea} from 'react-native-safe-area-view';
 
 import {editListName} from 'actions';
 import Task from 'containers/Task';
@@ -10,6 +11,7 @@ import Icon from 'components/Icon';
 
 import {
   RootView,
+  ContentView,
   Content,
   contentStyle,
   TitleArea,
@@ -28,6 +30,9 @@ function List({route, lists, editListName}) {
 
   const [listName, setListName] = useState(list.name);
   const listNameInput = useRef(null);
+
+  const safeAreaOffset = useSafeArea();
+  const keyboardVerticalOffset = safeAreaOffset.top + 8;
 
   useEffect(() => {
     setTimeout(() => {
@@ -61,50 +66,61 @@ function List({route, lists, editListName}) {
 
   return (
     <RootView>
-      <TitleArea>
-        <Title
-          returnKeyType="done"
-          ref={listNameInput}
-          onChangeText={handleChangeText}
-          placeholder="New list"
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          onSubmitEditing={submitListNameChange}
-          value={listName}
-        />
-      </TitleArea>
+      <ContentView
+        behavior="padding"
+        keyboardVerticalOffset={keyboardVerticalOffset}>
+        <TitleArea>
+          <Title
+            returnKeyType="done"
+            ref={listNameInput}
+            onChangeText={handleChangeText}
+            placeholder="New list"
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onSubmitEditing={submitListNameChange}
+            value={listName}
+          />
+        </TitleArea>
 
-      <Content
-        keyboardShouldPersistTaps="always"
-        contentContainerStyle={contentStyle}
-        showsVerticalScrollIndicator={false}>
-        {map(({taskId, ...task}) => (
-          <Task key={taskId} taskId={taskId} {...task} parentList={list} />
-        ))(tasks)}
-      </Content>
+        <Content
+          ref={(ref) => {
+            this.scrollView = ref;
+          }}
+          onContentSizeChange={() =>
+            this.scrollView.scrollToEnd({animated: true})
+          }
+          keyboardShouldPersistTaps="always"
+          contentContainerStyle={contentStyle}
+          showsVerticalScrollIndicator={false}>
+          {map(({taskId, ...task}) => (
+            <Task key={taskId} taskId={taskId} {...task} parentList={list} />
+          ))(tasks)}
+        </Content>
 
-      <AddTaskButton
-        color={list.color}
-        activeOpacity={0.75}
-        onPress={handleAddTask}>
-        <Icon
-          name="plus"
-          fill="#fff"
-          height={16}
-          width={16}
-          viewBox="0 0 24 24"
-        />
-        <AddTaskText>Add a task</AddTaskText>
-      </AddTaskButton>
-
-      {titleFocused && <ColorPicker listId={listId} />}
-      {addingTask && (
-        <TaskAdder
-          listId={listId}
-          color={list.color}
-          finished={finishedAddingTasks}
-        />
-      )}
+        {addingTask ? (
+          <TaskAdder
+            listId={listId}
+            color={list.color}
+            finished={finishedAddingTasks}
+          />
+        ) : titleFocused ? (
+          <ColorPicker listId={listId} />
+        ) : (
+          <AddTaskButton
+            color={list.color}
+            activeOpacity={0.75}
+            onPress={handleAddTask}>
+            <Icon
+              name="plus"
+              fill="#fff"
+              height={16}
+              width={16}
+              viewBox="0 0 24 24"
+            />
+            <AddTaskText>Add a task</AddTaskText>
+          </AddTaskButton>
+        )}
+      </ContentView>
     </RootView>
   );
 }
