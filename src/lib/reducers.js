@@ -10,7 +10,7 @@ import {
   TOGGLE_COMPLETED,
   REMOVE_TASK,
   EDIT_TASK,
-} from 'actions';
+} from 'lib/actions';
 
 const initialState = {
   'example-list': {
@@ -128,4 +128,4 @@ function lists(state = initialState, {type, payload}) {
   }
 }
 
-export default lists;
+export {lists};

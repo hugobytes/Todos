@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 
 import Icon from 'components/Icon';
-import {toggleCompleted, removeTask, editTask} from 'actions';
+import {toggleCompleted, removeTask, editTask} from 'lib/actions';
 
 import {
   RootView,

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import {colors} from 'theme';
+import colors from 'lib/colors';
 
 const RootView = styled.View``;
 

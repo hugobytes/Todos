@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {size} from 'lodash/fp';
 
 import Icon from 'components/Icon';
-import {addTask} from 'actions';
+import {addTask} from 'lib/actions';
 
 import {RootView, NewTask, Checkbox, NewTaskInput} from './styles';
 

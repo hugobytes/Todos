@@ -2,7 +2,7 @@ import React from 'react';
 import {map, eq} from 'lodash/fp';
 import {connect} from 'react-redux';
 
-import {changeListColor} from 'actions';
+import {changeListColor} from 'lib/actions';
 
 import {
   RootView,

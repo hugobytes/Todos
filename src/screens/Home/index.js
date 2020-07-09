@@ -1,11 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {map} from 'lodash/fp';
+import {map, size} from 'lodash/fp';
 
-import Summary from 'containers/Summary';
+import Summary from 'components/Summary';
 import Icon from 'components/Icon';
-import {navigate} from 'routes/actions';
-import {createNewList} from 'actions';
+import {navigate} from 'lib/navigation';
+import {createNewList} from 'lib/actions';
 
 import {
   RootView,
@@ -13,6 +13,7 @@ import {
   contentStyle,
   NewListButton,
   NewListText,
+  EmptyImage,
 } from './styles';
 
 function Home({lists, createNewList}) {
@@ -24,6 +25,10 @@ function Home({lists, createNewList}) {
 
   return (
     <RootView>
+      <EmptyImage source={require('assets/empty.png')} />
+      {!size(lists) ? (
+        <EmptyImage source={require('assets/empty.png')} />
+      ) : null}
       <Content
         contentContainerStyle={contentStyle}
         showsVerticalScrollIndicator={false}>

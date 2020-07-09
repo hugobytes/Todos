@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import {map, eq} from 'lodash/fp';
 import {useSafeArea} from 'react-native-safe-area-view';
 
-import {editListName} from 'actions';
-import Task from 'containers/Task';
-import ColorPicker from 'containers/ColorPicker';
-import TaskAdder from 'containers/TaskAdder';
+import {editListName} from 'lib/actions';
+import Task from 'components/Task';
+import ColorPicker from 'components/ColorPicker';
+import TaskAdder from 'components/TaskAdder';
 import Icon from 'components/Icon';
 
 import {

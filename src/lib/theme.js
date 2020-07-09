@@ -1,5 +1,5 @@
-import { DefaultTheme } from '@react-navigation/native'
-import colors from './colors'
+import {DefaultTheme} from '@react-navigation/native';
+import colors from './colors';
 
 export default {
   ...DefaultTheme,
@@ -10,6 +10,4 @@ export default {
     card: colors.background,
     text: colors.text,
   },
-}
-
-export { colors }
+};

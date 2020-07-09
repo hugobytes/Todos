@@ -2,9 +2,9 @@ import React from 'react';
 import {size, filter, eq} from 'lodash/fp';
 import {connect} from 'react-redux';
 
-import {deleteList} from 'actions';
-import {calcPercentage} from 'utils';
-import {navigate} from 'routes/actions';
+import {deleteList} from 'lib/actions';
+import {calcPercentage} from 'lib/utils';
+import {navigate} from 'lib/navigation';
 import Pie from 'components/Pie';
 import Icon from 'components/Icon';
 
@@ -50,7 +50,7 @@ function SummaryComponent({listId, name, color, lists, deleteList}) {
       showsHorizontalScrollIndicator={false}
       snapToInterval={64}
       bounces={false}>
-      <Summary activeOpacity={0.75} onPress={openList}>
+      <Summary activeOpacity={1} onPress={openList}>
         <Pie percentage={percentage} color={color} />
         <NameAndInfo>
           {eq('')(name) ? <Untitled>Untitled</Untitled> : <Name>{name}</Name>}

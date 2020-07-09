@@ -30,4 +30,20 @@ const NewListText = styled.Text`
   margin-left: 16px;
 `;
 
-export {RootView, Content, contentStyle, NewListButton, NewListText};
+const EmptyImage = styled.Image`
+  flex: 1;
+  resize-mode: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+`;
+
+export {
+  RootView,
+  Content,
+  contentStyle,
+  NewListButton,
+  NewListText,
+  EmptyImage,
+};

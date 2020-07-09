@@ -1,9 +1,9 @@
-import React from 'react'
-import Pie from 'react-native-pie'
-import { colors } from 'theme'
+import React from 'react';
+import Pie from 'react-native-pie';
+import colors from 'lib/colors';
 
-export default ({ percentage, color }) => {
-  const sections = percentage > 0 ? [{ percentage, color }] : []
+export default ({percentage, color}) => {
+  const sections = percentage > 0 ? [{percentage, color}] : [];
 
   return (
     <Pie
@@ -12,5 +12,5 @@ export default ({ percentage, color }) => {
       backgroundColor={colors.content_deep}
       sections={sections}
     />
-  )
-}
+  );
+};
