@@ -682,6 +682,7 @@
 				);
 				INFOPLIST_FILE = Todos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.01;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -705,6 +706,7 @@
 				DEVELOPMENT_TEAM = DL9D52SP6F;
 				INFOPLIST_FILE = Todos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.01;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
