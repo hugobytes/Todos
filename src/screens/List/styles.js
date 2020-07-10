@@ -33,6 +33,10 @@ const AddTaskButton = styled.TouchableOpacity`
   flex-direction: row;
   margin: 0 16px 16px;
   padding: 16px 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 `;
 
 const AddTaskText = styled.Text`
